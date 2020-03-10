@@ -103,6 +103,8 @@
         android:layout_marginLeft="0dp"
         android:layout_marginTop="16dp"
         android:background="#A128FF"
+        android:text="@string/exit"
+        android:onClick="onExit"
         app:layout_constraintStart_toStartOf="@+id/view2_3"
         app:layout_constraintTop_toBottomOf="@id/view2_3" />
 

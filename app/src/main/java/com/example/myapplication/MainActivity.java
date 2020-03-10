@@ -42,4 +42,8 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent);
     }
+
+    public void onExit(View view){
+        finish();
+    }
 }

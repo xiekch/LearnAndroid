@@ -13,4 +13,5 @@
     <string name="sysu_sigin">登录</string>
     <string name="title_activity_details">DetailsActivity</string>
     <string name="Recyclerview">RecyclerView</string>
+    <string name="exit">Exit</string>
 </resources>
