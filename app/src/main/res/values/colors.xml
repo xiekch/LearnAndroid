@@ -5,4 +5,6 @@
     <color name="colorAccent">#D81B60</color>
     <color name="white">#FFFFFF</color>
     <color name="deepBlue">#3F51B5</color>
+    <color name="orange">#FF7810</color>
+    <color name="deepGreen">#077707</color>
 </resources>
