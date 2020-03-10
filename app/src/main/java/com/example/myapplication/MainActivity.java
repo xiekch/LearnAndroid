@@ -9,13 +9,25 @@ import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
     public static final String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        View view1_1 = findViewById(R.id.view1_1);
+        view1_1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, sysuActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
-    /** Called when the user taps the Send button */
+    /**
+     * Called when the user taps the Send button
+     */
     public void sendMessage(View view) {
         Intent intent = new Intent(this, DisplayMessageActivity.class);
         EditText editText = (EditText) findViewById(R.id.editText);

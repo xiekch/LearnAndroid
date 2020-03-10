@@ -2,4 +2,13 @@
     <string name="app_name">My Application</string>
     <string name="edit_message">Enter a message</string>
     <string name="button_send">Send</string>
+    <string name="sysu_system">中山大学学生信息系统</string>
+    <string name="sysu_student_id">学号：</string>
+    <string name="sysu_student_id_input">请输入学号</string>
+    <string name="sysu_student_password">密码：</string>
+    <string name="sysu_student_password_input">请输入密码</string>
+    <string name="sysu_teacher">教职工</string>
+    <string name="sysu_student">学生</string>
+    <string name="sysu_register">注册</string>
+    <string name="sysu_sigin">登录</string>
 </resources>
