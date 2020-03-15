@@ -16,7 +16,7 @@
             android:name=".AnimationActivity"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".DetailsActivity"
+            android:name=".recyclerView.DetailsActivity"
             android:label="@string/title_activity_details"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
