@@ -14,4 +14,6 @@
     <string name="title_activity_details">DetailsActivity</string>
     <string name="Recyclerview">RecyclerView</string>
     <string name="exit">Exit</string>
+    <string name="animation">Animation</string>
+    <string name="layout">Layout</string>
 </resources>

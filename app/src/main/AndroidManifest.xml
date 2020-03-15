@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".layout.LayoutIndexActivity"
+            android:parentActivityName=".MainActivity"></activity>
+        <activity
+            android:name=".AnimationActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
             android:name=".DetailsActivity"
             android:label="@string/title_activity_details"
             android:parentActivityName=".MainActivity"
@@ -18,10 +24,9 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.myapplication.MainActivity" />
         </activity>
-
         <activity
-            android:name=".SysuActivity"
-            android:parentActivityName=".MainActivity" />
+            android:name=".layout.SysuActivity"
+            android:parentActivityName=".layout.LayoutIndexActivity" />
         <activity
             android:name=".DisplayMessageActivity"
             android:parentActivityName=".MainActivity">
