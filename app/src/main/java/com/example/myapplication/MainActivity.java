@@ -9,7 +9,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.myapplication.layout.LayoutIndexActivity;
-import com.example.myapplication.recyclerView.DetailsActivity;
+import com.example.myapplication.recyclerView.RecyclerViewActivity;
 
 public class MainActivity extends AppCompatActivity {
     public static final String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         textView1_2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, DetailsActivity.class);
+                Intent intent = new Intent(MainActivity.this, RecyclerViewActivity.class);
                 startActivity(intent);
             }
         });

@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.View;
 
-public class DetailsActivity extends AppCompatActivity {
+public class RecyclerViewActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private RecyclerView.Adapter mAdapter;
@@ -22,7 +22,7 @@ public class DetailsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_details);
+        setContentView(R.layout.activity_recyclerview);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -47,8 +47,8 @@ public class DetailsActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
 
         // specify an adapter (see also next example)
-        String []myDataset=new String[]{"南校区","东校区","北校区"};
-        mAdapter = new MyAdapter(myDataset);
+        String[] myDataset = new String[]{"南校区", "东校区", "北校区"};
+        mAdapter = new MyAdapter(RecyclerViewActivity.this, myDataset);
         recyclerView.setAdapter(mAdapter);
 
     }
