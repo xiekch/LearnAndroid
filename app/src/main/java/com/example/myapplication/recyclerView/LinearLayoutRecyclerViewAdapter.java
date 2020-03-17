@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication.R;
 
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
+public class LinearLayoutRecyclerViewAdapter extends RecyclerView.Adapter<LinearLayoutRecyclerViewAdapter.MyViewHolder> {
     private Context mContext;
     private String[] mDataset;
 
@@ -29,15 +29,15 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public MyAdapter(Context context, String[] myDataset) {
+    public LinearLayoutRecyclerViewAdapter(Context context, String[] myDataset) {
         mContext = context;
         mDataset = myDataset;
     }
 
     // Create new views (invoked by the layout manager)
     @Override
-    public MyAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent,
-                                                     int viewType) {
+    public LinearLayoutRecyclerViewAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent,
+                                                                           int viewType) {
         // create a new view
         TextView v = (TextView) LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.list_item_textview, parent, false);

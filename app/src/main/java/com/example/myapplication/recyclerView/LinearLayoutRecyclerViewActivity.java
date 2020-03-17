@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.View;
 
-public class RecyclerViewActivity extends AppCompatActivity {
+public class LinearLayoutRecyclerViewActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private RecyclerView.Adapter mAdapter;
@@ -48,7 +48,7 @@ public class RecyclerViewActivity extends AppCompatActivity {
 
         // specify an adapter (see also next example)
         String[] myDataset = new String[]{"南校区", "东校区", "北校区"};
-        mAdapter = new MyAdapter(RecyclerViewActivity.this, myDataset);
+        mAdapter = new LinearLayoutRecyclerViewAdapter(LinearLayoutRecyclerViewActivity.this, myDataset);
         recyclerView.setAdapter(mAdapter);
 
     }
