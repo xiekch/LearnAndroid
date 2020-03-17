@@ -16,4 +16,6 @@
     <string name="exit">Exit</string>
     <string name="animation">Animation</string>
     <string name="layout">Layout</string>
+    <string name="ListLayout">ListLayout</string>
+    <string name="StaggeredGrid">StaggeredGrid</string>
 </resources>

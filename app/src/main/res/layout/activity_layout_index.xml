@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".layout.LayoutIndexActivity">
 
-    <Button style="@style/LayoutIndexButton"
+    <Button style="@style/ConstraintLayoutIndexButton"
         android:id="@+id/button1"
         android:text="@string/sysu_system"
         app:layout_constraintEnd_toEndOf="parent"
