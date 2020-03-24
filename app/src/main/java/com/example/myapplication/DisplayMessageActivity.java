@@ -37,6 +37,7 @@ public class DisplayMessageActivity extends AppCompatActivity {
                 return true;
             }
         });
-        webView.loadUrl("https://3g.baidu.com/s?word=" + message);
+        webView.getSettings().setJavaScriptEnabled(true);
+        webView.loadUrl("https://blog.csdn.net");
     }
 }

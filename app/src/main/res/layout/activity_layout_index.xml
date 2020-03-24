@@ -6,11 +6,27 @@
     android:layout_height="match_parent"
     tools:context=".layout.LayoutIndexActivity">
 
-    <Button style="@style/ConstraintLayoutIndexButton"
+    <Button
         android:id="@+id/button1"
+        style="@style/ConstraintLayoutIndexButton"
         android:text="@string/sysu_system"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"></Button>
 
+    <Button
+        android:id="@+id/button2"
+        style="@style/ConstraintLayoutIndexButton"
+        android:text="@string/webview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button1"></Button>
+
+    <Button
+        android:id="@+id/button3"
+        style="@style/ConstraintLayoutIndexButton"
+        android:text="Load HTML"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button2"></Button>
 </androidx.constraintlayout.widget.ConstraintLayout>
