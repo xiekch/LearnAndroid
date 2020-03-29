@@ -29,4 +29,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/button2"></Button>
+
+    <Button
+        android:id="@+id/button4"
+        style="@style/ConstraintLayoutIndexButton"
+        android:text="Toast"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button3"></Button>
+
+    <Button
+        android:id="@+id/button5"
+        style="@style/ConstraintLayoutIndexButton"
+        android:text="AlertDialog"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button4"></Button>
 </androidx.constraintlayout.widget.ConstraintLayout>
