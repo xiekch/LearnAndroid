@@ -18,6 +18,7 @@ public class LayoutIndexActivity extends AppCompatActivity {
     private Button button3;
     private Button button4;
     private Button button5;
+    private Button button6;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +30,7 @@ public class LayoutIndexActivity extends AppCompatActivity {
         button3 = findViewById(R.id.button3);
         button4 = findViewById(R.id.button4);
         button5 = findViewById(R.id.button5);
+        button6 = findViewById(R.id.button6);
 
         setOnClickListener();
     }
@@ -40,6 +42,7 @@ public class LayoutIndexActivity extends AppCompatActivity {
         button3.setOnClickListener(onClick);
         button4.setOnClickListener(onClick);
         button5.setOnClickListener(onClick);
+        button6.setOnClickListener(onClick);
     }
 
     private class OnClick implements View.OnClickListener {
@@ -70,6 +73,10 @@ public class LayoutIndexActivity extends AppCompatActivity {
                     break;
                 case R.id.button5:
                     intent = new Intent(LayoutIndexActivity.this, AlertDialogActivity.class);
+                    startActivity(intent);
+                    break;
+                    case R.id.button6:
+                    intent = new Intent(LayoutIndexActivity.this, ProgressBarActivity.class);
                     startActivity(intent);
                     break;
             }

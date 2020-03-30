@@ -55,7 +55,7 @@ public class LinearLayoutRecyclerViewAdapter extends RecyclerView.Adapter<Linear
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(mContext, mDataset[position], Toast.LENGTH_LONG).show();
+                Toast.makeText(mContext, mDataset[position], Toast.LENGTH_SHORT).show();
             }
         });
 

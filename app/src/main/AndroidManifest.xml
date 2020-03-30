@@ -12,8 +12,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".layout.ProgressBarActivity"
+            android:parentActivityName=".layout.LayoutIndexActivity" />
+        <activity
             android:name=".layout.AlertDialogActivity"
-            android:parentActivityName=".layout.LayoutIndexActivity"></activity>
+            android:parentActivityName=".layout.LayoutIndexActivity" />
         <activity
             android:name=".layout.WebViewActivity"
             android:parentActivityName=".layout.LayoutIndexActivity" />

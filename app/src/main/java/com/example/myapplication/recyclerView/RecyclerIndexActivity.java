@@ -36,12 +36,12 @@ public class RecyclerIndexActivity extends AppCompatActivity {
             Intent intent = null;
             switch (v.getId()) {
                 case R.id.button1:
-                    Toast.makeText(RecyclerIndexActivity.this, R.string.ListLayout, Toast.LENGTH_LONG).show();
+                    Toast.makeText(RecyclerIndexActivity.this, R.string.ListLayout, Toast.LENGTH_SHORT).show();
                     intent = new Intent(RecyclerIndexActivity.this, LinearLayoutRecyclerViewActivity.class);
                     startActivity(intent);
                     break;
                 case R.id.button2:
-                    Toast.makeText(RecyclerIndexActivity.this, R.string.StaggeredGrid, Toast.LENGTH_LONG).show();
+                    Toast.makeText(RecyclerIndexActivity.this, R.string.StaggeredGrid, Toast.LENGTH_SHORT).show();
                     intent = new Intent(RecyclerIndexActivity.this, StaggeredGridRecyclerViewActivity.class);
                     startActivity(intent);
                     break;

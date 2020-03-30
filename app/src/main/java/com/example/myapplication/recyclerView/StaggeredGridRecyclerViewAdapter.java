@@ -58,7 +58,7 @@ public class StaggeredGridRecyclerViewAdapter extends RecyclerView.Adapter<Stagg
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(mContext, String.valueOf(position), Toast.LENGTH_LONG).show();
+                Toast.makeText(mContext, String.valueOf(position), Toast.LENGTH_SHORT).show();
             }
         });
 

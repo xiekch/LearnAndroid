@@ -45,4 +45,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/button4"></Button>
+
+
+    <Button
+        android:id="@+id/button6"
+        style="@style/ConstraintLayoutIndexButton"
+        android:text="Progress Bar"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button5"></Button>
 </androidx.constraintlayout.widget.ConstraintLayout>
