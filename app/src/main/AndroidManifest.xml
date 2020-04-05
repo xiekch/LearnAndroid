@@ -12,6 +12,19 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".intent.NextActivity"
+            android:label="next">
+            <intent-filter>
+                <action android:name="android.intent.action.Jump" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".intent.IntentActivity"
+            android:label="intent"
+            android:parentActivityName=".MainActivity" />
+        <activity
             android:name=".activity.LifeCycleActivity"
             android:parentActivityName=".MainActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />

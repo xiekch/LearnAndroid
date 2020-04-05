@@ -9,65 +9,46 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.myapplication.activity.LifeCycleActivity;
+import com.example.myapplication.intent.IntentActivity;
 import com.example.myapplication.layout.LayoutIndexActivity;
 import com.example.myapplication.recyclerView.RecyclerIndexActivity;
 
 public class MainActivity extends AppCompatActivity {
     public static final String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
 
+    private TextView textView1_1;
+    private TextView textView1_2;
+    private TextView textView1_3;
+    private TextView textView2_1;
+    private TextView textView2_2;
+    private TextView textView3_3;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        TextView textView1_1 = findViewById(R.id.view1_1);
-        textView1_1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, LayoutIndexActivity.class);
-                startActivity(intent);
-            }
-        });
+        textView1_1 = findViewById(R.id.view1_1);
+        textView1_2 = findViewById(R.id.view1_2);
+        textView1_3 = findViewById(R.id.view1_3);
+        textView2_1 = findViewById(R.id.view2_1);
+        textView2_2 = findViewById(R.id.view2_2);
+        textView3_3 = findViewById(R.id.view3_3);
+
         textView1_1.setText(R.string.layout);
-
-        TextView textView1_2 = findViewById(R.id.view1_2);
-        textView1_2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, RecyclerIndexActivity.class);
-                startActivity(intent);
-            }
-        });
         textView1_2.setText(R.string.Recyclerview);
-
-        TextView textView1_3 = findViewById(R.id.view1_3);
         textView1_3.setText(R.string.animation);
-        textView1_3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, AnimationActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        TextView textView2_1 = findViewById(R.id.view2_1);
         textView2_1.setText(R.string.activity);
-        textView2_1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, LifeCycleActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        TextView textView3_3 = findViewById(R.id.view3_3);
+        textView2_2.setText("Intent");
         textView3_3.setText(R.string.exit);
-        textView3_3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+
+        OnClick onClick = new OnClick();
+        textView1_1.setOnClickListener(onClick);
+        textView1_2.setOnClickListener(onClick);
+        textView1_3.setOnClickListener(onClick);
+        textView2_1.setOnClickListener(onClick);
+        textView2_2.setOnClickListener(onClick);
+        textView3_3.setOnClickListener(onClick);
     }
 
     /**
@@ -79,5 +60,39 @@ public class MainActivity extends AppCompatActivity {
         String message = editText.getText().toString();
         intent.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent);
+    }
+
+    class OnClick implements View.OnClickListener {
+
+        @Override
+        public void onClick(View v) {
+            Intent intent;
+            switch (v.getId()) {
+                case R.id.view1_1:
+                    intent = new Intent(MainActivity.this, LayoutIndexActivity.class);
+                    startActivity(intent);
+                    break;
+                case R.id.view1_2:
+                    intent = new Intent(MainActivity.this, RecyclerIndexActivity.class);
+                    startActivity(intent);
+                    break;
+                case R.id.view1_3:
+                    intent = new Intent(MainActivity.this, AnimationActivity.class);
+                    startActivity(intent);
+                    break;
+                case R.id.view2_1:
+                    intent = new Intent(MainActivity.this, LifeCycleActivity.class);
+                    startActivity(intent);
+                    break;
+                case R.id.view2_2:
+                    intent = new Intent();
+                    intent.setClass(MainActivity.this, IntentActivity.class);
+                    startActivity(intent);
+                    break;
+                case R.id.view3_3:
+                    finish();
+                    break;
+            }
+        }
     }
 }
