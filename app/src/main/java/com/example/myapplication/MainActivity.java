@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.myapplication.activity.LifeCycleActivity;
 import com.example.myapplication.layout.LayoutIndexActivity;
 import com.example.myapplication.recyclerView.RecyclerIndexActivity;
 
@@ -45,6 +46,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, AnimationActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        TextView textView2_1 = findViewById(R.id.view2_1);
+        textView2_1.setText(R.string.activity);
+        textView2_1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, LifeCycleActivity.class);
                 startActivity(intent);
             }
         });

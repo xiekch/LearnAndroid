@@ -19,4 +19,5 @@
     <string name="ListLayout">ListLayout</string>
     <string name="StaggeredGrid">StaggeredGrid</string>
     <string name="webview">Webview</string>
+    <string name="activity">Activity</string>
 </resources>
