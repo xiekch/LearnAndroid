@@ -7,12 +7,22 @@
     tools:context=".intent.IntentActivity">
 
     <Button
-        android:id="@+id/jump_button"
+        android:id="@+id/jump_button1"
+        style="@style/ConstraintLayoutIndexButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Jump"
-        android:textAllCaps="false"
+        android:text="Jump to Next"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/jump_button2"
+        style="@style/ConstraintLayoutIndexButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Jump to Current"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/jump_button1" />
 </androidx.constraintlayout.widget.ConstraintLayout>

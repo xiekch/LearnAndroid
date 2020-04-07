@@ -23,6 +23,7 @@
         <activity
             android:name=".intent.IntentActivity"
             android:label="intent"
+            android:launchMode="singleTop"
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".activity.LifeCycleActivity"
