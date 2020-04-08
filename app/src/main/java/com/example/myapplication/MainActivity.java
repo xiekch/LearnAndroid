@@ -9,6 +9,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.myapplication.activity.LifeCycleActivity;
+import com.example.myapplication.fragment.ContainerActivity;
 import com.example.myapplication.intent.IntentActivity;
 import com.example.myapplication.layout.LayoutIndexActivity;
 import com.example.myapplication.recyclerView.RecyclerIndexActivity;
@@ -21,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView textView1_3;
     private TextView textView2_1;
     private TextView textView2_2;
+    private TextView textView2_3;
     private TextView textView3_3;
 
     @Override
@@ -33,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         textView1_3 = findViewById(R.id.view1_3);
         textView2_1 = findViewById(R.id.view2_1);
         textView2_2 = findViewById(R.id.view2_2);
+        textView2_3 = findViewById(R.id.view2_3);
         textView3_3 = findViewById(R.id.view3_3);
 
         textView1_1.setText(R.string.layout);
@@ -40,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
         textView1_3.setText(R.string.animation);
         textView2_1.setText(R.string.activity);
         textView2_2.setText("Intent");
+        textView2_3.setText("Fragment");
         textView3_3.setText(R.string.exit);
 
         OnClick onClick = new OnClick();
@@ -48,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
         textView1_3.setOnClickListener(onClick);
         textView2_1.setOnClickListener(onClick);
         textView2_2.setOnClickListener(onClick);
+        textView2_3.setOnClickListener(onClick);
         textView3_3.setOnClickListener(onClick);
     }
 
@@ -87,6 +92,10 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.view2_2:
                     intent = new Intent();
                     intent.setClass(MainActivity.this, IntentActivity.class);
+                    startActivity(intent);
+                    break;
+                case R.id.view2_3:
+                    intent = new Intent(MainActivity.this, ContainerActivity.class);
                     startActivity(intent);
                     break;
                 case R.id.view3_3:
