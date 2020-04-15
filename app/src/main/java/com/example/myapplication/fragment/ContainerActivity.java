@@ -46,29 +46,25 @@ public class ContainerActivity extends AppCompatActivity implements AFragment.On
     private void initTransactionA() {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         if (aFragment == null) {
-            aFragment = new AFragment();
+            aFragment = AFragment.newInstance("Dynamic set A text");
             transaction.add(R.id.frameLayout, aFragment);
         }
-        hideFragment(transaction);
-        transaction.show(aFragment).commitAllowingStateLoss();
+        if (bFragment != null) {
+            transaction.hide(bFragment);
+        }
+        transaction.show(aFragment).addToBackStack(null).commitAllowingStateLoss();
     }
 
     private void initTransactionB() {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         if (bFragment == null) {
-            bFragment = new BFragment();
+            bFragment = BFragment.newInstance("Dynamic set B text");
             transaction.add(R.id.frameLayout, bFragment);
         }
-        hideFragment(transaction);
-        transaction.show(bFragment).commitAllowingStateLoss();
-    }
-
-    private void hideFragment(FragmentTransaction transaction) {
         if (aFragment != null) {
             transaction.hide(aFragment);
         }
-        if (bFragment != null) {
-            transaction.hide(bFragment);
-        }
+        transaction.show(bFragment).addToBackStack(null).commitAllowingStateLoss();
     }
+
 }

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -54,6 +55,7 @@ public class AlertDialogActivity extends AppCompatActivity {
                             Toast.makeText(AlertDialogActivity.this, "forget the pain", Toast.LENGTH_SHORT).show();
                         }
                     }).setIcon(R.drawable.notification).show();
+                    Log.d("AlertDialogActivity", "asynchronous message");
                     break;
                 case R.id.button2:
                     AlertDialog.Builder builder2 = new AlertDialog.Builder(AlertDialogActivity.this);
