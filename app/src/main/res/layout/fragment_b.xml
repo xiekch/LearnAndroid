@@ -5,7 +5,12 @@
     android:layout_height="match_parent"
     tools:context=".fragment.BFragment">
 
-    <!-- TODO: Update blank fragment layout -->
+    <Button android:id="@+id/button_send_message"
+        style="@style/LinearLayoutIndexButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Send Activity a message" />
+
     <TextView android:id="@+id/BTextView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

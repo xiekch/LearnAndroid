@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,12 +23,15 @@ import com.example.myapplication.R;
  * Use the {@link BFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class BFragment extends Fragment {
+public class BFragment extends Fragment implements View.OnClickListener {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private String text;
 
     private OnFragmentInteractionListener mListener;
+    private Button button_send_message;
+
+    private OnBMessageListener BMessageListener;
 
     public BFragment() {
         // Required empty public constructor
@@ -48,6 +52,8 @@ public class BFragment extends Fragment {
         return fragment;
     }
 
+    ;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,9 +68,11 @@ public class BFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_a, container, false);
-        TextView textview = view.findViewById(R.id.ATextview);
+        View view = inflater.inflate(R.layout.fragment_b, container, false);
+        TextView textview = view.findViewById(R.id.BTextView);
+        button_send_message = view.findViewById(R.id.button_send_message);
         textview.setText(text);
+        button_send_message.setOnClickListener(this);
         return view;
     }
 
@@ -84,12 +92,28 @@ public class BFragment extends Fragment {
             throw new RuntimeException(context.toString()
                     + " must implement OnFragmentInteractionListener");
         }
+        if (context instanceof OnBMessageListener) {
+            BMessageListener = (OnBMessageListener) context;
+        } else {
+            throw new RuntimeException(context.toString() + " must implement OnBMessageListener");
+        }
     }
 
     @Override
     public void onDetach() {
         super.onDetach();
         mListener = null;
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.button_send_message:
+                if (BMessageListener != null) {
+                    BMessageListener.setMessage("");
+                }
+                break;
+        }
     }
 
     /**
@@ -105,5 +129,9 @@ public class BFragment extends Fragment {
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
+    }
+
+    public interface OnBMessageListener {
+        void setMessage(String text);
     }
 }

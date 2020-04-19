@@ -7,19 +7,22 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.myapplication.R;
 
-public class ContainerActivity extends AppCompatActivity implements AFragment.OnFragmentInteractionListener, BFragment.OnFragmentInteractionListener, View.OnClickListener {
+public class ContainerActivity extends AppCompatActivity implements AFragment.OnFragmentInteractionListener, BFragment.OnFragmentInteractionListener, View.OnClickListener, AFragment.OnAMessageListener, BFragment.OnBMessageListener {
     private AFragment aFragment;
     private BFragment bFragment;
     private Button change_fragmentA_button;
     private Button change_fragmentB_button;
+    private TextView textView_message;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_container);
+        textView_message = findViewById(R.id.textView_message);
 
         change_fragmentA_button = findViewById(R.id.change_fragmentA_button);
         change_fragmentA_button.setOnClickListener(this);
@@ -67,4 +70,8 @@ public class ContainerActivity extends AppCompatActivity implements AFragment.On
         transaction.show(bFragment).addToBackStack(null).commitAllowingStateLoss();
     }
 
+    @Override
+    public void setMessage(String text) {
+        this.textView_message.setText(text);
+    }
 }

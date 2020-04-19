@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,11 +23,13 @@ import com.example.myapplication.R;
  * Use the {@link AFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class AFragment extends Fragment {
+public class AFragment extends Fragment implements View.OnClickListener {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
 
     private String text;
+    private Button button_send_message;
+    private OnAMessageListener AMessageListener;
 
     private OnFragmentInteractionListener mListener;
 
@@ -64,7 +67,9 @@ public class AFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_a, container, false);
         TextView textview = view.findViewById(R.id.ATextview);
+        button_send_message = view.findViewById(R.id.button_send_message);
         textview.setText(text);
+        button_send_message.setOnClickListener(this);
         return view;
     }
 
@@ -84,12 +89,29 @@ public class AFragment extends Fragment {
             throw new RuntimeException(context.toString()
                     + " must implement OnFragmentInteractionListener");
         }
+        if (context instanceof OnAMessageListener) {
+            AMessageListener = (OnAMessageListener) context;
+        } else {
+            throw new RuntimeException(context.toString()
+                    + " must implement OnMessageListener");
+        }
     }
 
     @Override
     public void onDetach() {
         super.onDetach();
         mListener = null;
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.button_send_message:
+                if (AMessageListener != null) {
+                    AMessageListener.setMessage("Here we go");
+                }
+                break;
+        }
     }
 
     /**
@@ -105,5 +127,12 @@ public class AFragment extends Fragment {
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
+    }
+
+    // It requires activities to implement the interface instead of
+    //  knowing the actual classes of activities
+    // dependence inversion
+    public interface OnAMessageListener {
+        void setMessage(String text);
     }
 }
