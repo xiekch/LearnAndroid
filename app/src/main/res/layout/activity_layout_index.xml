@@ -55,4 +55,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/button5"></Button>
+
+
+    <com.example.myapplication.layout.MyButton
+        android:id="@+id/button7"
+        style="@style/ConstraintLayoutIndexButton"
+        android:text="My Button"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button6"></com.example.myapplication.layout.MyButton>
 </androidx.constraintlayout.widget.ConstraintLayout>

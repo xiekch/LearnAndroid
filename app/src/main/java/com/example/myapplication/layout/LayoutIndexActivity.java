@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -19,6 +21,7 @@ public class LayoutIndexActivity extends AppCompatActivity {
     private Button button4;
     private Button button5;
     private Button button6;
+    private MyButton button7;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +34,7 @@ public class LayoutIndexActivity extends AppCompatActivity {
         button4 = findViewById(R.id.button4);
         button5 = findViewById(R.id.button5);
         button6 = findViewById(R.id.button6);
+        button7 = findViewById(R.id.button7);
 
         setOnClickListener();
     }
@@ -43,12 +47,14 @@ public class LayoutIndexActivity extends AppCompatActivity {
         button4.setOnClickListener(onClick);
         button5.setOnClickListener(onClick);
         button6.setOnClickListener(onClick);
+        button7.setOnTouchListener(onClick);
     }
 
-    private class OnClick implements View.OnClickListener {
+    private class OnClick implements View.OnClickListener, View.OnTouchListener {
 
         @Override
         public void onClick(View v) {
+            Toast.makeText(LayoutIndexActivity.this, "click", Toast.LENGTH_SHORT).show();
             Intent intent = null;
             switch (v.getId()) {
                 case R.id.button1:
@@ -75,11 +81,31 @@ public class LayoutIndexActivity extends AppCompatActivity {
                     intent = new Intent(LayoutIndexActivity.this, AlertDialogActivity.class);
                     startActivity(intent);
                     break;
-                    case R.id.button6:
+                case R.id.button6:
                     intent = new Intent(LayoutIndexActivity.this, ProgressBarActivity.class);
                     startActivity(intent);
                     break;
             }
         }
+
+        @Override
+        public boolean onTouch(View v, MotionEvent event) {
+            switch (v.getId()) {
+                case R.id.button7:
+                    // listener is prior to callback MyButton.onTouchEvent
+                    Toast.makeText(LayoutIndexActivity.this, "Listener", Toast.LENGTH_SHORT).show();
+                    Log.d("MyButton Listener", "touched");
+                    break;
+            }
+            return false;
+        }
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        Log.d("activity", "touched");
+//        Toast.makeText(this, "activity touched", Toast.LENGTH_SHORT).show();
+        super.onTouchEvent(event);
+        return false;
     }
 }
