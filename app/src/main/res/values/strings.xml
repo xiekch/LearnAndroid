@@ -20,4 +20,5 @@
     <string name="StaggeredGrid">StaggeredGrid</string>
     <string name="webview">Webview</string>
     <string name="activity">Activity</string>
+    <string name="thread">Thread</string>
 </resources>
