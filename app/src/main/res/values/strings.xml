@@ -21,4 +21,7 @@
     <string name="webview">Webview</string>
     <string name="activity">Activity</string>
     <string name="thread">Thread</string>
+    <string name="storage">Storage</string>
+    <string name="components">Components</string>
+    <string name="service">Service</string>
 </resources>

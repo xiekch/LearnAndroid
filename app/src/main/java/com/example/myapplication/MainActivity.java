@@ -1,18 +1,19 @@
 package com.example.myapplication;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.myapplication.activity.LifeCycleActivity;
 import com.example.myapplication.fragment.ContainerActivity;
 import com.example.myapplication.intent.IntentActivity;
 import com.example.myapplication.layout.LayoutIndexActivity;
 import com.example.myapplication.recyclerView.RecyclerIndexActivity;
+import com.example.myapplication.storage.StorageIndexActivity;
 import com.example.myapplication.thread.ThreadIndexActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView textView2_2;
     private TextView textView2_3;
     private TextView textView3_1;
+    private TextView textView3_2;
     private TextView textView3_3;
 
     @Override
@@ -39,15 +41,17 @@ public class MainActivity extends AppCompatActivity {
         textView2_2 = findViewById(R.id.view2_2);
         textView2_3 = findViewById(R.id.view2_3);
         textView3_1 = findViewById(R.id.view3_1);
+        textView3_2 = findViewById(R.id.view3_2);
         textView3_3 = findViewById(R.id.view3_3);
 
         textView1_1.setText(R.string.layout);
         textView1_2.setText(R.string.Recyclerview);
         textView1_3.setText(R.string.animation);
-        textView2_1.setText(R.string.activity);
+        textView2_1.setText(R.string.components);
         textView2_2.setText("Intent");
         textView2_3.setText("Fragment");
         textView3_1.setText(R.string.thread);
+        textView3_2.setText(R.string.storage);
         textView3_3.setText(R.string.exit);
 
         OnClick onClick = new OnClick();
@@ -58,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
         textView2_2.setOnClickListener(onClick);
         textView2_3.setOnClickListener(onClick);
         textView3_1.setOnClickListener(onClick);
+        textView3_2.setOnClickListener(onClick);
         textView3_3.setOnClickListener(onClick);
     }
 
@@ -105,6 +110,10 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case R.id.view3_1:
                     intent = new Intent(MainActivity.this, ThreadIndexActivity.class);
+                    startActivity(intent);
+                    break;
+                case R.id.view3_2:
+                    intent = new Intent(MainActivity.this, StorageIndexActivity.class);
                     startActivity(intent);
                     break;
                 case R.id.view3_3:

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".component.ComponentsIndexActivity">
+
+    <Button
+        android:id="@+id/button_activity"
+        style="@style/ConstraintLayoutIndexButton"
+        android:text="@string/activity"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button_service"
+        style="@style/ConstraintLayoutIndexButton"
+        android:text="@string/service"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button_activity" />
+
+    <Button
+        android:id="@+id/button_broadcast_receiver"
+        style="@style/ConstraintLayoutIndexButton"
+        android:text="Broadcast receiver"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button_service" />
+
+    <Button
+        android:id="@+id/button_content_provider"
+        style="@style/ConstraintLayoutIndexButton"
+        android:text="Activity"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button_broadcast_receiver" />
+</androidx.constraintlayout.widget.ConstraintLayout>

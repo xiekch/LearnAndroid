@@ -29,4 +29,9 @@ public class MyButton extends AppCompatButton {
         Log.d("MyButton", "touched");
         return false;
     }
+
+    @Override
+    public boolean performClick() {
+        return super.performClick();
+    }
 }

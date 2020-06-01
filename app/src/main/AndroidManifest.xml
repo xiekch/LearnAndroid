@@ -12,6 +12,19 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".layout.ToolBarActivity"
+            android:parentActivityName=".layout.LayoutIndexActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".layout.ActionBarActivity"
+            android:logo="@drawable/ic_launcher_foreground"
+            android:parentActivityName=".layout.LayoutIndexActivity" />
+        <activity android:name=".component.ComponentsIndexActivity" />
+        <activity
+            android:name=".storage.SharedPreferencesActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".storage.StorageIndexActivity" />
+        <activity
             android:name=".thread.ThreadIndexActivity"
             android:parentActivityName=".MainActivity" />
         <activity
