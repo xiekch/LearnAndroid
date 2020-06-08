@@ -9,9 +9,12 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.myapplication.activity.LifeCycleActivity;
+import com.example.myapplication.animation.AnimationActivity;
 import com.example.myapplication.fragment.ContainerActivity;
 import com.example.myapplication.intent.IntentActivity;
+import com.example.myapplication.layout.DisplayMessageActivity;
 import com.example.myapplication.layout.LayoutIndexActivity;
+import com.example.myapplication.library.LibraryIndexActivity;
 import com.example.myapplication.recyclerView.RecyclerIndexActivity;
 import com.example.myapplication.storage.StorageIndexActivity;
 import com.example.myapplication.thread.ThreadIndexActivity;
@@ -52,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         textView2_3.setText("Fragment");
         textView3_1.setText(R.string.thread);
         textView3_2.setText(R.string.storage);
-        textView3_3.setText(R.string.exit);
+        textView3_3.setText(R.string.library);
 
         OnClick onClick = new OnClick();
         textView1_1.setOnClickListener(onClick);
@@ -117,7 +120,8 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(intent);
                     break;
                 case R.id.view3_3:
-                    finish();
+                    intent = new Intent(MainActivity.this, LibraryIndexActivity.class);
+                    startActivity(intent);
                     break;
             }
         }

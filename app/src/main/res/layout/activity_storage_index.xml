@@ -14,8 +14,16 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
+        android:id="@+id/button_files"
         style="@style/ConstraintLayoutIndexButton"
         android:text="Files"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/button_shared_preferences" />
+
+    <Button
+        android:id="@+id/button_room"
+        style="@style/ConstraintLayoutIndexButton"
+        android:text="Room"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button_files" />
 </androidx.constraintlayout.widget.ConstraintLayout>

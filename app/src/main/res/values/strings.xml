@@ -24,4 +24,5 @@
     <string name="storage">Storage</string>
     <string name="components">Components</string>
     <string name="service">Service</string>
+    <string name="library">Library</string>
 </resources>

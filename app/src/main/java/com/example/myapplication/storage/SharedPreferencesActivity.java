@@ -19,6 +19,7 @@ public class SharedPreferencesActivity extends AppCompatActivity implements View
     private SharedPreferences.Editor editor;
     private Button button_save;
     private Button button_display;
+    private Button button_remove_all;
     private EditText edit_text;
     private TextView text_view_display;
 
@@ -31,12 +32,14 @@ public class SharedPreferencesActivity extends AppCompatActivity implements View
         button_display = findViewById(R.id.button_display);
         edit_text = findViewById(R.id.edit_text);
         text_view_display = findViewById(R.id.text_view_display);
+        button_remove_all = findViewById(R.id.button_remove_all);
 
         sharedPreferences = getSharedPreferences("data", MODE_PRIVATE);
         editor = sharedPreferences.edit();
 
         button_save.setOnClickListener(this);
         button_display.setOnClickListener(this);
+        button_remove_all.setOnClickListener(this);
         edit_text.setOnClickListener(this);
         text_view_display.setOnClickListener(this);
     }
@@ -58,7 +61,10 @@ public class SharedPreferencesActivity extends AppCompatActivity implements View
                 for (Map.Entry<String, ?> entry : all.entrySet()) {
                     text_view_display.append(entry.getKey() + " " + entry.getValue() + "\n");
                 }
-
+                break;
+            case R.id.button_remove_all:
+                editor.clear().commit();
+                text_view_display.setText("");
                 break;
         }
     }

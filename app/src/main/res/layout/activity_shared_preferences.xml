@@ -42,6 +42,6 @@
         android:scrollbars="vertical"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/button_display" />
+        app:layout_constraintTop_toBottomOf="@id/button_remove_all" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

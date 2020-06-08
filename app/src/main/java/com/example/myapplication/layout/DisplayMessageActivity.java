@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.layout;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
@@ -13,6 +13,9 @@ import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.TextView;
+
+import com.example.myapplication.MainActivity;
+import com.example.myapplication.R;
 
 public class DisplayMessageActivity extends AppCompatActivity {
 
