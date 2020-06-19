@@ -57,7 +57,7 @@ public class LayoutIndexActivity extends AppCompatActivity implements View.OnCli
 
     @Override
     public void onClick(View v) {
-        Toast.makeText(LayoutIndexActivity.this, "click", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(LayoutIndexActivity.this, "click", Toast.LENGTH_SHORT).show();
         Intent intent = null;
         switch (v.getId()) {
             case R.id.button1:
