@@ -4,33 +4,40 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".component.ComponentsIndexActivity">
+    tools:context=".component.ServiceIndexActivity">
 
     <Button
-        android:id="@+id/button_activity"
+        android:id="@+id/button_start_service"
         style="@style/ConstraintLayoutIndexButton"
-        android:text="@string/activity"
+        android:text="Start Service"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button_service"
+        android:id="@+id/button_stop_service"
         style="@style/ConstraintLayoutIndexButton"
-        android:text="@string/service"
+        android:text="Stop Service"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/button_activity" />
+        app:layout_constraintTop_toBottomOf="@id/button_start_service" />
 
     <Button
-        android:id="@+id/button_broadcast_receiver"
+        android:id="@+id/button_bind_service"
         style="@style/ConstraintLayoutIndexButton"
-        android:text="Broadcast receiver"
+        android:text="Bind Service"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/button_service" />
+        app:layout_constraintTop_toBottomOf="@id/button_stop_service" />
 
     <Button
-        android:id="@+id/button_content_provider"
+        android:id="@+id/button_unbind_service"
         style="@style/ConstraintLayoutIndexButton"
-        android:text="Content Provider"
+        android:text="Unbind Service"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/button_broadcast_receiver" />
+        app:layout_constraintTop_toBottomOf="@id/button_bind_service" />
+
+    <Button
+        android:id="@+id/button_intent_service"
+        style="@style/ConstraintLayoutIndexButton"
+        android:text="Intent Service"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button_unbind_service" />
 </androidx.constraintlayout.widget.ConstraintLayout>

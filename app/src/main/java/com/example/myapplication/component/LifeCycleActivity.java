@@ -1,4 +1,4 @@
-package com.example.myapplication.activity;
+package com.example.myapplication.component;
 
 import android.os.Bundle;
 import android.util.Log;
