@@ -44,7 +44,6 @@ class FilesActivity : AppCompatActivity(), View.OnClickListener {
         } else {
             requestPermissions(mPermissionsArrays, REQUEST_PERMISSION);
         }
-
     }
 
     override fun onClick(v: View?) {

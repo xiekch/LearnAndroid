@@ -11,14 +11,16 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_config"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".library.OkHttpActivity" />
+        <activity android:name=".library.MvvmActivity" />
+        <activity android:name=".layout.ListViewActivity" />
+
         <service
             android:name=".component.MyIntentService"
-            android:exported="false"></service>
-        <service
-            android:name=".component.MyIntentService2"
             android:exported="false" />
 
         <activity android:name=".component.ServiceIndexActivity" />

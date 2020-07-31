@@ -14,15 +14,19 @@ import kotlinx.android.synthetic.main.activity_shared_preferences.*
 class SharedPreferencesActivity : AppCompatActivity(), View.OnClickListener {
     private var editor: SharedPreferences.Editor? = null
     private var sharedPreferences: SharedPreferences? = null
-    private var tag = "SharedPreferences Activity"
+
+    companion object {
+        const val TAG = "SharedPreferences Activity"
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_shared_preferences)
 
         if (savedInstanceState != null) {
-            Log.i(tag, "savedInstance")
+            Log.i(TAG, "savedInstance")
             edit_text.setText(savedInstanceState.getString("edit_text"))
+            text_view_display.text = savedInstanceState.getString("text_view_display")
         }
 
         sharedPreferences = getSharedPreferences("data", Context.MODE_PRIVATE)
@@ -59,8 +63,9 @@ class SharedPreferencesActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
-    override fun onSaveInstanceState(outState: Bundle, outPersistentState: PersistableBundle) {
-        super.onSaveInstanceState(outState, outPersistentState)
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
         outState.putString("edit_text", edit_text.text.toString())
+        outState.putString("text_view_display", text_view_display.text.toString())
     }
 }

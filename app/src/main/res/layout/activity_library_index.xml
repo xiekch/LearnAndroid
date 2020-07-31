@@ -33,4 +33,12 @@
         android:text="Glide"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/button_rxJava" />
+
+    <Button
+        android:id="@+id/button_mvvm"
+        style="@style/ConstraintLayoutIndexButton"
+        android:text="MVVM  "
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button_glide" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
