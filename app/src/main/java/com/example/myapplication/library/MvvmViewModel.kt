@@ -1,13 +1,22 @@
 package com.example.myapplication.library
 
+import android.util.Log
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class MvvmViewModel : ViewModel() {
-    val userLiveData = MutableLiveData<Person>()
-    val person = Person("Tom", "Gree", 10)
+    private lateinit var numberLiveData: MutableLiveData<Int>
 
-    fun changeUser() {
-        userLiveData.value = person
+    fun getNumber(): LiveData<Int> {
+        if (!::numberLiveData.isInitialized) {
+            numberLiveData = MutableLiveData()
+            numberLiveData.value = 0
+        }
+        return numberLiveData
+    }
+
+    fun add() {
+        numberLiveData.value = (numberLiveData.value ?: 0) + 1
     }
 }
