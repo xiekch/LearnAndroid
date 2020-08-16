@@ -14,12 +14,14 @@ class LibraryIndexActivity : AppCompatActivity(), View.OnClickListener {
         button_mvvm.setOnClickListener(this)
         button_okHttp.setOnClickListener(this)
         button_retrofit.setOnClickListener(this)
+        button_rxJava.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
         when (v?.id) {
             R.id.button_mvvm -> startActivity(Intent(this, MvvmActivity::class.java))
             R.id.button_okHttp -> OkHttpActivity.actionStart(this)
+            R.id.button_rxJava -> startActivity(Intent(this, RxJavaActivity::class.java))
             R.id.button_retrofit -> null
         }
     }
