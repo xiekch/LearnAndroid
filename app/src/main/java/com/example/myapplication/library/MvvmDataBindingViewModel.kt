@@ -5,13 +5,13 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class MvvmViewModel : ViewModel() {
+class MvvmDataBindingViewModel : ViewModel() {
     private lateinit var numberLiveData: MutableLiveData<Int>
 
     fun getNumber(): LiveData<Int> {
         if (!::numberLiveData.isInitialized) {
             numberLiveData = MutableLiveData()
-            numberLiveData.value = 2
+            numberLiveData.value = 0
         }
         return numberLiveData
     }

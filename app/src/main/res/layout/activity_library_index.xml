@@ -37,8 +37,15 @@
     <Button
         android:id="@+id/button_mvvm"
         style="@style/ConstraintLayoutIndexButton"
-        android:text="MVVM  "
+        android:text="MVVM"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/button_glide" />
+
+    <Button
+        android:id="@+id/button_mvvm_data_binding"
+        style="@style/ConstraintLayoutIndexButton"
+        android:text="MVVM Data Binding"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button_mvvm" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

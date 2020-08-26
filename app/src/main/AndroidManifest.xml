@@ -17,6 +17,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".library.RxJavaActivity"></activity>
         <activity android:name=".library.OkHttpActivity" />
+        <activity android:name=".library.MvvmDataBindingActivity" />
         <activity android:name=".library.MvvmActivity" />
         <activity android:name=".layout.ListViewActivity" />
 
