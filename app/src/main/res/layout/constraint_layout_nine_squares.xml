@@ -9,6 +9,8 @@
         android:id="@+id/view1_1"
         style="@style/BlockText"
         android:background="@color/orange"
+        app:layout_constraintBottom_toTopOf="@+id/view2_1"
+        app:layout_constraintEnd_toStartOf="@id/view1_2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -16,81 +18,88 @@
         android:id="@+id/view1_2"
         style="@style/BlockText"
         android:layout_below="@id/view1_1"
-        android:layout_marginStart="16dp"
         android:background="@color/deepGreen"
+        app:layout_constraintBottom_toTopOf="@+id/view2_2"
+        app:layout_constraintEnd_toStartOf="@id/view1_3"
         app:layout_constraintStart_toEndOf="@+id/view1_1"
-        app:layout_constraintTop_toTopOf="@+id/view1_1" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <TextView
         android:id="@+id/view1_3"
         style="@style/BlockText"
         android:layout_below="@id/view1_1"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="0dp"
         android:background="#A128FF"
+        app:layout_constraintBottom_toTopOf="@+id/view2_3"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/view1_2"
-        app:layout_constraintTop_toTopOf="@+id/view1_1" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <TextView
         android:id="@+id/view2_1"
         style="@style/BlockText"
-        android:layout_marginStart="0dp"
         android:layout_marginTop="16dp"
         android:background="#FF7810"
-        app:layout_constraintStart_toStartOf="@id/view1_1"
-        app:layout_constraintTop_toBottomOf="@id/view1_1" />
+        app:layout_constraintBottom_toTopOf="@+id/view3_1"
+        app:layout_constraintEnd_toStartOf="@id/view2_2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view1_1" />
 
     <TextView
         android:id="@+id/view2_2"
         style="@style/BlockText"
         android:layout_below="@id/view1_1"
-        android:layout_marginStart="0dp"
         android:layout_marginTop="16dp"
         android:background="#077707"
-        app:layout_constraintStart_toStartOf="@+id/view1_2"
-        app:layout_constraintTop_toBottomOf="@id/view1_2" />
+        app:layout_constraintBottom_toTopOf="@+id/view3_2"
+        app:layout_constraintEnd_toStartOf="@id/view2_3"
+        app:layout_constraintStart_toEndOf="@+id/view2_1"
+        app:layout_constraintTop_toBottomOf="@+id/view1_2" />
 
 
     <TextView
         android:id="@+id/view2_3"
         style="@style/BlockText"
         android:layout_below="@id/view1_1"
-        android:layout_marginStart="0dp"
         android:layout_marginTop="16dp"
         android:background="#A128FF"
-        app:layout_constraintStart_toStartOf="@+id/view1_3"
-        app:layout_constraintTop_toBottomOf="@id/view1_3" />
+        app:layout_constraintBottom_toTopOf="@+id/view3_3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/view2_2"
+        app:layout_constraintTop_toBottomOf="@+id/view1_3" />
 
     <TextView
         android:id="@+id/view3_1"
         style="@style/BlockText"
-        android:layout_marginStart="0dp"
         android:layout_marginTop="16dp"
         android:background="#FF7810"
-        app:layout_constraintStart_toStartOf="@+id/view2_1"
-        app:layout_constraintTop_toBottomOf="@id/view2_1" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/view3_2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view2_1" />
 
     <TextView
         android:id="@+id/view3_2"
         style="@style/BlockText"
         android:layout_below="@id/view1_1"
-        android:layout_marginStart="0dp"
         android:layout_marginTop="16dp"
         android:background="#077707"
-        app:layout_constraintStart_toStartOf="@+id/view2_2"
-        app:layout_constraintTop_toBottomOf="@id/view2_2" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/view3_3"
+        app:layout_constraintStart_toEndOf="@id/view3_1"
+        app:layout_constraintTop_toBottomOf="@+id/view2_2" />
 
 
     <TextView
         android:id="@+id/view3_3"
         style="@style/BlockText"
         android:layout_below="@id/view1_1"
-        android:layout_marginStart="0dp"
         android:layout_marginTop="16dp"
         android:background="#A128FF"
-        app:layout_constraintStart_toStartOf="@+id/view2_3"
-        app:layout_constraintTop_toBottomOf="@id/view2_3" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/view3_2"
+        app:layout_constraintTop_toBottomOf="@+id/view2_3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
