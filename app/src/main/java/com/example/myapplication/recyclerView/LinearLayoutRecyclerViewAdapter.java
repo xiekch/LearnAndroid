@@ -41,9 +41,7 @@ public class LinearLayoutRecyclerViewAdapter extends RecyclerView.Adapter<Linear
         // create a new view
         TextView v = (TextView) LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.list_item_textview, parent, false);
-//        ...
-        MyViewHolder vh = new MyViewHolder(v);
-        return vh;
+        return new MyViewHolder(v);
     }
 
     // Replace the contents of a view (invoked by the layout manager)

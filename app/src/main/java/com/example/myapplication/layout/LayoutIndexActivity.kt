@@ -27,6 +27,7 @@ class LayoutIndexActivity : AppCompatActivity(), View.OnClickListener, OnTouchLi
         button7.setOnTouchListener(this)
         button8.setOnClickListener(this)
         button9.setOnClickListener(this)
+        button_collapsing_toolbar.setOnClickListener (this)
         button_list_view.setOnClickListener(this)
     }
 
@@ -72,6 +73,10 @@ class LayoutIndexActivity : AppCompatActivity(), View.OnClickListener, OnTouchLi
             }
             R.id.button_list_view -> {
                 intent = Intent(this@LayoutIndexActivity, ListViewActivity::class.java)
+                startActivity(intent)
+            }
+            R.id.button_collapsing_toolbar->{
+                intent = Intent(this@LayoutIndexActivity, CollapsingToolbarActivity::class.java)
                 startActivity(intent)
             }
         }

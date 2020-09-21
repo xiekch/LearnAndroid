@@ -112,6 +112,16 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/button_list_view" />
+
+
+            <Button
+                android:id="@+id/button_collapsing_toolbar"
+                style="@style/ConstraintLayoutIndexButton"
+                android:text="Collapsing Toolbar"
+                android:textAllCaps="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/button_list_view" />
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -20,10 +20,15 @@ class ThreadIndexActivity : AppCompatActivity(), View.OnClickListener {
         var count = 0
         override fun handleMessage(msg: Message) {
             when (msg.what) {
-                MSG_SEND -> Toast.makeText(this@ThreadIndexActivity, msg.toString(), Toast.LENGTH_SHORT).show()
+                MSG_SEND -> Toast.makeText(
+                    this@ThreadIndexActivity,
+                    msg.toString(),
+                    Toast.LENGTH_SHORT
+                ).show()
                 MSG_TICK -> if (!stop) {
                     count++
-                    Toast.makeText(this@ThreadIndexActivity, "tick $count", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@ThreadIndexActivity, "tick $count", Toast.LENGTH_SHORT)
+                        .show()
                     sendEmptyMessageDelayed(MSG_TICK, 3000)
                 }
                 MSG_TICK_STOP -> stop = true
@@ -53,19 +58,26 @@ class ThreadIndexActivity : AppCompatActivity(), View.OnClickListener {
                 if (!handlerThread.isAlive) {
                     handlerThread.start()
                 }
-                if (checkDataHandler == null) checkDataHandler = object : Handler(handlerThread.looper) {
-                    override fun handleMessage(msg: Message) {
-                        when (msg.what) {
-                            MSG_DATA -> {
-                                // update data
-                                handler.sendMessage(Message.obtain(handler, MSG_DATA, (Math.random() * 1000).toInt()))
-                                checkDataHandler?.sendEmptyMessageDelayed(MSG_DATA, 3000)
+                if (checkDataHandler == null) checkDataHandler =
+                    object : Handler(handlerThread.looper) {
+                        override fun handleMessage(msg: Message) {
+                            when (msg.what) {
+                                MSG_DATA -> {
+                                    // update data
+                                    handler.sendMessage(
+                                        Message.obtain(
+                                            handler,
+                                            MSG_DATA,
+                                            (Math.random() * 1000).toInt()
+                                        )
+                                    )
+                                    checkDataHandler?.sendEmptyMessageDelayed(MSG_DATA, 3000)
+                                }
+                                MSG_DATA_STOP ->                                         // pause
+                                    checkDataHandler?.removeCallbacksAndMessages(null)
                             }
-                            MSG_DATA_STOP ->                                         // pause
-                                checkDataHandler?.removeCallbacksAndMessages(null)
                         }
                     }
-                }
                 checkDataHandler?.sendEmptyMessage(MSG_DATA)
             } else {
                 // pause
@@ -76,7 +88,13 @@ class ThreadIndexActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onClick(v: View) {
         when (v.id) {
-            R.id.button_post_delayed -> handler.postDelayed({ Toast.makeText(this@ThreadIndexActivity, "post delayed", Toast.LENGTH_SHORT).show() }, 2500)
+            R.id.button_post_delayed -> handler.postDelayed({
+                Toast.makeText(
+                    this@ThreadIndexActivity,
+                    "post delayed",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }, 2500)
             R.id.button_send_message -> object : Thread() {
                 override fun run() {
                     handler.sendMessage(Message.obtain(handler, MSG_SEND))
