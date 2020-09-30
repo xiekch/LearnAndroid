@@ -15,7 +15,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".layout.CollapsingToolbarActivity"></activity>
+        <activity
+            android:name=".layout.DialogActivity"
+            android:theme="@style/MyDialogStyle" />
+        <activity android:name=".layout.CollapsingToolbarActivity" />
         <activity android:name=".library.Dagger2Activity" />
         <activity android:name=".library.RxJavaActivity" />
         <activity android:name=".library.OkHttpActivity" />

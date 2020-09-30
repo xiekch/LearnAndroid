@@ -10,4 +10,6 @@
     <color name="deepGreen">#077707</color>
     <color name="black">#000000</color>
     <color name="lightGray">#F0F0F0</color>
+    <color name="transparent">#00000000</color>
+    <color name="transparent_50">#80000000</color>
 </resources>
