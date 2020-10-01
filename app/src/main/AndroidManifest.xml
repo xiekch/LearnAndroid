@@ -16,15 +16,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".layout.DialogActivity"
+            android:name=".ui.DialogActivity"
             android:theme="@style/MyDialogStyle" />
-        <activity android:name=".layout.CollapsingToolbarActivity" />
+        <activity android:name=".ui.CollapsingToolbarActivity" />
         <activity android:name=".library.Dagger2Activity" />
         <activity android:name=".library.RxJavaActivity" />
         <activity android:name=".library.OkHttpActivity" />
         <activity android:name=".library.MvvmDataBindingActivity" />
         <activity android:name=".library.MvvmActivity" />
-        <activity android:name=".layout.ListViewActivity" />
+        <activity android:name=".ui.ListViewActivity" />
 
         <service
             android:name=".component.MyIntentService"
@@ -42,13 +42,13 @@
             android:name=".library.LibraryIndexActivity"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".layout.ToolBarActivity"
-            android:parentActivityName=".layout.LayoutIndexActivity"
+            android:name=".ui.ToolBarActivity"
+            android:parentActivityName=".ui.LayoutIndexActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".layout.ActionBarActivity"
+            android:name=".ui.ActionBarActivity"
             android:logo="@drawable/ic_launcher_foreground"
-            android:parentActivityName=".layout.LayoutIndexActivity" />
+            android:parentActivityName=".ui.LayoutIndexActivity" />
         <activity android:name=".component.ComponentsIndexActivity" />
         <activity
             android:name=".storage.SharedPreferencesActivity"
@@ -79,14 +79,14 @@
             android:parentActivityName=".MainActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".layout.ProgressBarActivity"
-            android:parentActivityName=".layout.LayoutIndexActivity" />
+            android:name=".ui.ProgressBarActivity"
+            android:parentActivityName=".ui.LayoutIndexActivity" />
         <activity
-            android:name=".layout.AlertDialogActivity"
-            android:parentActivityName=".layout.LayoutIndexActivity" />
+            android:name=".ui.AlertDialogActivity"
+            android:parentActivityName=".ui.LayoutIndexActivity" />
         <activity
-            android:name=".layout.WebViewActivity"
-            android:parentActivityName=".layout.LayoutIndexActivity" />
+            android:name=".ui.WebViewActivity"
+            android:parentActivityName=".ui.LayoutIndexActivity" />
         <activity
             android:name=".recyclerView.RecyclerIndexActivity"
             android:parentActivityName=".MainActivity" />
@@ -94,7 +94,7 @@
             android:name=".recyclerView.StaggeredGridRecyclerViewActivity"
             android:parentActivityName=".recyclerView.RecyclerIndexActivity" />
         <activity
-            android:name=".layout.LayoutIndexActivity"
+            android:name=".ui.LayoutIndexActivity"
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".animation.AnimationActivity"
@@ -109,10 +109,10 @@
                 android:value="com.example.myapplication.MainActivity" />
         </activity>
         <activity
-            android:name=".layout.SysuActivity"
-            android:parentActivityName=".layout.LayoutIndexActivity" />
+            android:name=".ui.SysuActivity"
+            android:parentActivityName=".ui.LayoutIndexActivity" />
         <activity
-            android:name=".layout.DisplayMessageActivity"
+            android:name=".ui.DisplayMessageActivity"
             android:parentActivityName=".MainActivity">
 
             <!-- The meta-data tag is required if you support API level 15 and lower -->

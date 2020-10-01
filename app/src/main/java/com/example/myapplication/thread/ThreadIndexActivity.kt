@@ -1,45 +1,35 @@
 package com.example.myapplication.thread
 
-import android.os.*
+import android.os.AsyncTask
+import android.os.Bundle
+import android.os.Handler
+import android.os.HandlerThread
+import android.os.Message
 import android.util.Log
 import android.view.View
 import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.myapplication.R
-import kotlinx.android.synthetic.main.activity_thread_index.*
+import kotlinx.android.synthetic.main.activity_thread_index.button_cancel
+import kotlinx.android.synthetic.main.activity_thread_index.button_download
+import kotlinx.android.synthetic.main.activity_thread_index.button_post_delayed
+import kotlinx.android.synthetic.main.activity_thread_index.button_send_message
+import kotlinx.android.synthetic.main.activity_thread_index.button_tick
+import kotlinx.android.synthetic.main.activity_thread_index.switch_load_data
+import kotlinx.android.synthetic.main.activity_thread_index.textView_data
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import java.io.IOException
-import java.util.*
+import java.lang.ref.WeakReference
+import java.util.Objects
 
 class ThreadIndexActivity : AppCompatActivity(), View.OnClickListener {
-
-    private val handler: Handler = object : Handler() {
-        var stop = false
-        var count = 0
-        override fun handleMessage(msg: Message) {
-            when (msg.what) {
-                MSG_SEND -> Toast.makeText(
-                    this@ThreadIndexActivity,
-                    msg.toString(),
-                    Toast.LENGTH_SHORT
-                ).show()
-                MSG_TICK -> if (!stop) {
-                    count++
-                    Toast.makeText(this@ThreadIndexActivity, "tick $count", Toast.LENGTH_SHORT)
-                        .show()
-                    sendEmptyMessageDelayed(MSG_TICK, 3000)
-                }
-                MSG_TICK_STOP -> stop = true
-                MSG_DATA -> textView_data.text = msg.obj.toString()
-            }
-            //            Toast.makeText(ThreadIndexActivity.this, "You will not see it", Toast.LENGTH_SHORT).show();
-        }
-    }
-    private val handlerThread = HandlerThread("handler thread")
+    private val mainHandler: Handler = MainHandler(this)
+    private val dataHandlerThread = HandlerThread("handler thread")
     private var checkDataHandler: Handler? = null
     private var downloadTask: DownloadTask? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_thread_index)
@@ -49,24 +39,24 @@ class ThreadIndexActivity : AppCompatActivity(), View.OnClickListener {
         button_cancel.setOnClickListener(this)
         button_tick.setOnCheckedChangeListener { buttonView, isChecked ->
             if (isChecked) {
-                handler.sendEmptyMessage(MSG_TICK)
-            } else handler.sendEmptyMessage(MSG_TICK_STOP)
+                mainHandler.sendEmptyMessage(MSG_TICK)
+            } else mainHandler.sendEmptyMessage(MSG_TICK_STOP)
         }
         button_download.setOnClickListener(this)
         switch_load_data.setOnCheckedChangeListener { buttonView, isChecked ->
             if (isChecked) {
-                if (!handlerThread.isAlive) {
-                    handlerThread.start()
+                if (!dataHandlerThread.isAlive) {
+                    dataHandlerThread.start()
                 }
                 if (checkDataHandler == null) checkDataHandler =
-                    object : Handler(handlerThread.looper) {
+                    object : Handler(dataHandlerThread.looper) {
                         override fun handleMessage(msg: Message) {
                             when (msg.what) {
                                 MSG_DATA -> {
                                     // update data
-                                    handler.sendMessage(
+                                    mainHandler.sendMessage(
                                         Message.obtain(
-                                            handler,
+                                            mainHandler,
                                             MSG_DATA,
                                             (Math.random() * 1000).toInt()
                                         )
@@ -88,7 +78,7 @@ class ThreadIndexActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onClick(v: View) {
         when (v.id) {
-            R.id.button_post_delayed -> handler.postDelayed({
+            R.id.button_post_delayed -> mainHandler.postDelayed({
                 Toast.makeText(
                     this@ThreadIndexActivity,
                     "post delayed",
@@ -97,10 +87,10 @@ class ThreadIndexActivity : AppCompatActivity(), View.OnClickListener {
             }, 2500)
             R.id.button_send_message -> object : Thread() {
                 override fun run() {
-                    handler.sendMessage(Message.obtain(handler, MSG_SEND))
+                    mainHandler.sendMessage(Message.obtain(mainHandler, MSG_SEND))
                 }
             }.start()
-            R.id.button_cancel -> handler.removeCallbacksAndMessages(null)
+            R.id.button_cancel -> mainHandler.removeCallbacksAndMessages(null)
             R.id.button_download -> if (downloadTask == null) {
                 downloadTask = DownloadTask()
                 downloadTask?.execute()
@@ -110,14 +100,22 @@ class ThreadIndexActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onPause() {
         super.onPause()
-        handler.removeCallbacksAndMessages(null)
+        mainHandler.removeCallbacksAndMessages(null)
         checkDataHandler?.removeCallbacksAndMessages(null)
         downloadTask?.cancel(true)
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        if (handlerThread.isAlive) handlerThread.quit()
+        if (dataHandlerThread.isAlive) dataHandlerThread.quit()
+    }
+
+    companion object {
+        const val MSG_SEND = 1
+        const val MSG_TICK = 11
+        const val MSG_TICK_STOP = 12
+        const val MSG_DATA = 13
+        const val MSG_DATA_STOP = 14
     }
 
     internal inner class DownloadTask : AsyncTask<String?, Int?, String>() {
@@ -175,11 +173,28 @@ class ThreadIndexActivity : AppCompatActivity(), View.OnClickListener {
 
     }
 
-    companion object {
-        const val MSG_SEND = 1
-        const val MSG_TICK = 11
-        const val MSG_TICK_STOP = 12
-        const val MSG_DATA = 13
-        const val MSG_DATA_STOP = 14
+    class MainHandler(context: ThreadIndexActivity) : Handler() {
+        private var stop = false
+        var count = 0
+        private val contextReference: WeakReference<ThreadIndexActivity> = WeakReference(context)
+
+        override fun handleMessage(msg: Message) {
+            when (msg.what) {
+                MSG_SEND -> Toast.makeText(
+                    contextReference.get(),
+                    msg.toString(),
+                    Toast.LENGTH_SHORT
+                ).show()
+                MSG_TICK -> if (!stop) {
+                    count++
+                    Toast.makeText(contextReference.get(), "tick $count", Toast.LENGTH_SHORT)
+                        .show()
+                    sendEmptyMessageDelayed(MSG_TICK, 3000)
+                }
+                MSG_TICK_STOP -> stop = true
+                MSG_DATA -> contextReference.get()?.textView_data?.text = msg.obj.toString()
+            }
+            //            Toast.makeText(ThreadIndexActivity.this, "You will not see it", Toast.LENGTH_SHORT).show();
+        }
     }
 }

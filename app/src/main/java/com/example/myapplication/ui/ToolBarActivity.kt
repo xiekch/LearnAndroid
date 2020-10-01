@@ -1,4 +1,4 @@
-package com.example.myapplication.layout
+package com.example.myapplication.ui
 
 import android.os.Bundle
 import android.view.Menu

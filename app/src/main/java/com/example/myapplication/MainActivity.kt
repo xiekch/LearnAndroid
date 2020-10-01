@@ -9,8 +9,8 @@ import com.example.myapplication.animation.AnimationActivity
 import com.example.myapplication.component.ComponentsIndexActivity
 import com.example.myapplication.fragment.ContainerActivity
 import com.example.myapplication.intent.IntentActivity
-import com.example.myapplication.layout.DisplayMessageActivity
-import com.example.myapplication.layout.LayoutIndexActivity
+import com.example.myapplication.ui.DisplayMessageActivity
+import com.example.myapplication.ui.LayoutIndexActivity
 import com.example.myapplication.library.LibraryIndexActivity
 import com.example.myapplication.recyclerView.RecyclerIndexActivity
 import com.example.myapplication.storage.StorageIndexActivity
@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        view1_1.setText(R.string.layout)
+        view1_1.setText(R.string.ui)
         view1_2.setText(R.string.Recyclerview)
         view1_3.setText(R.string.animation)
         view2_1.setText(R.string.components)

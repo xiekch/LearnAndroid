@@ -1,9 +1,7 @@
-package com.example.myapplication.layout
+package com.example.myapplication.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ArrayAdapter
-import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.R
 import com.example.myapplication.recyclerView.LinearLayoutRecyclerViewAdapter
 import kotlinx.android.synthetic.main.activity_collapsing_toolbar.recycler_view

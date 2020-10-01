@@ -15,6 +15,7 @@
     <string name="Recyclerview">RecyclerView</string>
     <string name="exit">Exit</string>
     <string name="animation">Animation</string>
+    <string name="ui">UI</string>
     <string name="layout">Layout</string>
     <string name="ListLayout">ListLayout</string>
     <string name="StaggeredGrid">StaggeredGrid</string>
