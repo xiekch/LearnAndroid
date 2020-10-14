@@ -9,13 +9,21 @@ import com.example.myapplication.animation.AnimationActivity
 import com.example.myapplication.component.ComponentsIndexActivity
 import com.example.myapplication.fragment.ContainerActivity
 import com.example.myapplication.intent.IntentActivity
-import com.example.myapplication.ui.DisplayMessageActivity
-import com.example.myapplication.ui.LayoutIndexActivity
 import com.example.myapplication.library.LibraryIndexActivity
 import com.example.myapplication.recyclerView.RecyclerIndexActivity
 import com.example.myapplication.storage.StorageIndexActivity
 import com.example.myapplication.thread.ThreadIndexActivity
-import kotlinx.android.synthetic.main.constraint_layout_nine_squares.*
+import com.example.myapplication.ui.DisplayMessageActivity
+import com.example.myapplication.ui.UIIndexActivity
+import kotlinx.android.synthetic.main.constraint_layout_nine_squares.view1_1
+import kotlinx.android.synthetic.main.constraint_layout_nine_squares.view1_2
+import kotlinx.android.synthetic.main.constraint_layout_nine_squares.view1_3
+import kotlinx.android.synthetic.main.constraint_layout_nine_squares.view2_1
+import kotlinx.android.synthetic.main.constraint_layout_nine_squares.view2_2
+import kotlinx.android.synthetic.main.constraint_layout_nine_squares.view2_3
+import kotlinx.android.synthetic.main.constraint_layout_nine_squares.view3_1
+import kotlinx.android.synthetic.main.constraint_layout_nine_squares.view3_2
+import kotlinx.android.synthetic.main.constraint_layout_nine_squares.view3_3
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
     companion object {
@@ -63,7 +71,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         val intent: Intent
         when (v?.id) {
             R.id.view1_1 -> {
-                intent = Intent(this, LayoutIndexActivity::class.java)
+                intent = Intent(this, UIIndexActivity::class.java)
                 startActivity(intent)
             }
             R.id.view1_2 -> {

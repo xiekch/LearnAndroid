@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -17,7 +16,6 @@
     <TextView
         android:id="@+id/view1_2"
         style="@style/BlockText"
-        android:layout_below="@id/view1_1"
         android:background="@color/deepGreen"
         app:layout_constraintBottom_toTopOf="@+id/view2_2"
         app:layout_constraintEnd_toStartOf="@id/view1_3"
@@ -28,7 +26,6 @@
     <TextView
         android:id="@+id/view1_3"
         style="@style/BlockText"
-        android:layout_below="@id/view1_1"
         android:background="#A128FF"
         app:layout_constraintBottom_toTopOf="@+id/view2_3"
         app:layout_constraintEnd_toEndOf="parent"
@@ -39,7 +36,6 @@
     <TextView
         android:id="@+id/view2_1"
         style="@style/BlockText"
-        android:layout_marginTop="16dp"
         android:background="#FF7810"
         app:layout_constraintBottom_toTopOf="@+id/view3_1"
         app:layout_constraintEnd_toStartOf="@id/view2_2"
@@ -49,8 +45,6 @@
     <TextView
         android:id="@+id/view2_2"
         style="@style/BlockText"
-        android:layout_below="@id/view1_1"
-        android:layout_marginTop="16dp"
         android:background="#077707"
         app:layout_constraintBottom_toTopOf="@+id/view3_2"
         app:layout_constraintEnd_toStartOf="@id/view2_3"
@@ -61,8 +55,6 @@
     <TextView
         android:id="@+id/view2_3"
         style="@style/BlockText"
-        android:layout_below="@id/view1_1"
-        android:layout_marginTop="16dp"
         android:background="#A128FF"
         app:layout_constraintBottom_toTopOf="@+id/view3_3"
         app:layout_constraintEnd_toEndOf="parent"
@@ -72,7 +64,6 @@
     <TextView
         android:id="@+id/view3_1"
         style="@style/BlockText"
-        android:layout_marginTop="16dp"
         android:background="#FF7810"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/view3_2"
@@ -82,8 +73,6 @@
     <TextView
         android:id="@+id/view3_2"
         style="@style/BlockText"
-        android:layout_below="@id/view1_1"
-        android:layout_marginTop="16dp"
         android:background="#077707"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/view3_3"
@@ -94,8 +83,6 @@
     <TextView
         android:id="@+id/view3_3"
         style="@style/BlockText"
-        android:layout_below="@id/view1_1"
-        android:layout_marginTop="16dp"
         android:background="#A128FF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

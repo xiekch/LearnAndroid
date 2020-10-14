@@ -4,18 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.ToolbarActivity">
+    tools:context=".ui.NavigationActivity">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        style="@style/MyToolBar"
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/navFragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/deepBlue"
-        android:forceHasOverlappingRendering="true"
-        android:logo="@mipmap/ic_launcher"
-        android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+        android:layout_height="match_parent"
+        app:defaultNavHost="true"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:popupTheme="@style/OverflowMenuStyle" />
+        app:navGraph="@navigation/custom_navigation" />
 </androidx.constraintlayout.widget.ConstraintLayout>

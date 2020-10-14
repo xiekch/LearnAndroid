@@ -26,7 +26,7 @@ public class WebViewActivity extends AppCompatActivity {
         webView.getSettings().setJavaScriptEnabled(true);
         // Get the Intent that started this activity and extract the string
         Intent intent = getIntent();
-        int type = intent.getIntExtra(LayoutIndexActivity.EXTRA_TYPE, 0);
+        int type = intent.getIntExtra(UIIndexActivity.EXTRA_TYPE, 0);
         if (type == 0) {
             webView.loadUrl("https://blog.csdn.net/");
         } else if (type == 1) {

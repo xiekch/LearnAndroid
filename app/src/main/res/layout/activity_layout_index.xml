@@ -2,9 +2,10 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.LayoutIndexActivity">
+    tools:context=".ui.UIIndexActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -60,17 +61,15 @@
                 android:id="@+id/button6"
                 style="@style/ConstraintLayoutIndexButton"
                 android:text="Progress Bar"
-                android:textAllCaps="false"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/button5" />
 
 
             <com.example.myapplication.ui.MyButton
-                android:id="@+id/button7"
+                android:id="@+id/buttonMyButton"
                 style="@style/ConstraintLayoutIndexButton"
                 android:text="My Button"
-                android:textAllCaps="false"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/button6" />
@@ -80,16 +79,14 @@
                 android:id="@+id/button8"
                 style="@style/ConstraintLayoutIndexButton"
                 android:text="ActionBar"
-                android:textAllCaps="false"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/button7" />
+                app:layout_constraintTop_toBottomOf="@id/buttonMyButton" />
 
             <Button
                 android:id="@+id/button9"
                 style="@style/ConstraintLayoutIndexButton"
                 android:text="ToolBar"
-                android:textAllCaps="false"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/button8" />
@@ -99,7 +96,6 @@
                 android:id="@+id/button_list_view"
                 style="@style/ConstraintLayoutIndexButton"
                 android:text="List View"
-                android:textAllCaps="false"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/button9" />
@@ -108,7 +104,6 @@
                 android:id="@+id/button_recycler_view"
                 style="@style/ConstraintLayoutIndexButton"
                 android:text="Recycler View"
-                android:textAllCaps="false"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/button_list_view" />
@@ -118,10 +113,49 @@
                 android:id="@+id/button_collapsing_toolbar"
                 style="@style/ConstraintLayoutIndexButton"
                 android:text="Collapsing Toolbar"
-                android:textAllCaps="false"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/button_list_view" />
+
+            <Button
+                android:id="@+id/buttonKeyboard"
+                style="@style/ConstraintLayoutIndexButton"
+                android:text="Keyboard"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/button_collapsing_toolbar" />
+
+            <Button
+                android:id="@+id/buttonFullScreen"
+                style="@style/ConstraintLayoutIndexButton"
+                android:text="Full Screen"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/buttonKeyboard" />
+
+            <Button
+                android:id="@+id/buttonDrawerLayout"
+                style="@style/ConstraintLayoutIndexButton"
+                android:text="Drawer Layout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/buttonFullScreen" />
+
+            <Button
+                android:id="@+id/buttonGestureDetector"
+                style="@style/ConstraintLayoutIndexButton"
+                android:text="Gesture Detector"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/buttonDrawerLayout" />
+
+            <Button
+                android:id="@+id/buttonNavigation"
+                style="@style/ConstraintLayoutIndexButton"
+                android:text="Navigation"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/buttonGestureDetector" />
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -32,11 +32,19 @@
 
 
     <Button
-        android:id="@+id/buttonStyle4"
+        android:id="@+id/buttonDialogActivity"
         style="@style/ConstraintLayoutIndexButton"
-        android:text="Style4"
+        android:text="Dialog Activity"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/buttonStyle3" />
+
+    <Button
+        android:id="@+id/buttonCustomDialog"
+        style="@style/ConstraintLayoutIndexButton"
+        android:text="Custom Dialog"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buttonDialogActivity" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

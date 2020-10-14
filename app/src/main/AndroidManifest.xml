@@ -15,10 +15,27 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".ui.NavigationActivity"></activity>
+        <activity android:name=".ui.GestureActivity" />
+        <activity
+            android:name=".ui.KeyboardActivity"
+            android:theme="@style/PreviewFullScreenTheme" />
+        <activity
+            android:name=".ui.DrawerLayoutActivity"
+            android:label="@string/title_activity_drawer_layout"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ui.FullscreenActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_fullscreen"
+            android:theme="@style/FullscreenTheme" />
         <activity
             android:name=".ui.DialogActivity"
             android:theme="@style/MyDialogStyle" />
-        <activity android:name=".ui.CollapsingToolbarActivity" />
+        <activity
+            android:name=".ui.CollapsingToolbarActivity"
+            android:label="CollapsingToolbar"
+            android:theme="@style/CollapsingToolbarActivityTheme" />
         <activity android:name=".library.Dagger2Activity" />
         <activity android:name=".library.RxJavaActivity" />
         <activity android:name=".library.OkHttpActivity" />
@@ -42,13 +59,14 @@
             android:name=".library.LibraryIndexActivity"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".ui.ToolBarActivity"
-            android:parentActivityName=".ui.LayoutIndexActivity"
+            android:name=".ui.ToolbarActivity"
+            android:label="Toolbar"
+            android:parentActivityName=".ui.UIIndexActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ui.ActionBarActivity"
             android:logo="@drawable/ic_launcher_foreground"
-            android:parentActivityName=".ui.LayoutIndexActivity" />
+            android:parentActivityName=".ui.UIIndexActivity" />
         <activity android:name=".component.ComponentsIndexActivity" />
         <activity
             android:name=".storage.SharedPreferencesActivity"
@@ -80,13 +98,13 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".ui.ProgressBarActivity"
-            android:parentActivityName=".ui.LayoutIndexActivity" />
+            android:parentActivityName=".ui.UIIndexActivity" />
         <activity
             android:name=".ui.AlertDialogActivity"
-            android:parentActivityName=".ui.LayoutIndexActivity" />
+            android:parentActivityName=".ui.UIIndexActivity" />
         <activity
             android:name=".ui.WebViewActivity"
-            android:parentActivityName=".ui.LayoutIndexActivity" />
+            android:parentActivityName=".ui.UIIndexActivity" />
         <activity
             android:name=".recyclerView.RecyclerIndexActivity"
             android:parentActivityName=".MainActivity" />
@@ -94,7 +112,7 @@
             android:name=".recyclerView.StaggeredGridRecyclerViewActivity"
             android:parentActivityName=".recyclerView.RecyclerIndexActivity" />
         <activity
-            android:name=".ui.LayoutIndexActivity"
+            android:name=".ui.UIIndexActivity"
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".animation.AnimationActivity"
@@ -110,7 +128,7 @@
         </activity>
         <activity
             android:name=".ui.SysuActivity"
-            android:parentActivityName=".ui.LayoutIndexActivity" />
+            android:parentActivityName=".ui.UIIndexActivity" />
         <activity
             android:name=".ui.DisplayMessageActivity"
             android:parentActivityName=".MainActivity">

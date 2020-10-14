@@ -8,10 +8,11 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.myapplication.R
+import kotlinx.android.synthetic.main.activity_alert_dialog.buttonCustomDialog
+import kotlinx.android.synthetic.main.activity_alert_dialog.buttonDialogActivity
 import kotlinx.android.synthetic.main.activity_alert_dialog.buttonStyle1
 import kotlinx.android.synthetic.main.activity_alert_dialog.buttonStyle2
 import kotlinx.android.synthetic.main.activity_alert_dialog.buttonStyle3
-import kotlinx.android.synthetic.main.activity_alert_dialog.buttonStyle4
 
 class AlertDialogActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -22,7 +23,8 @@ class AlertDialogActivity : AppCompatActivity(), View.OnClickListener {
         buttonStyle1.setOnClickListener(this)
         buttonStyle2.setOnClickListener(this)
         buttonStyle3.setOnClickListener(this)
-        buttonStyle4.setOnClickListener(this)
+        buttonDialogActivity.setOnClickListener(this)
+        buttonCustomDialog.setOnClickListener(this)
     }
 
     override fun onClick(v: View) {
@@ -73,9 +75,11 @@ class AlertDialogActivity : AppCompatActivity(), View.OnClickListener {
                     .setPositiveButton("ok") { dialog, which -> }
                     .setNegativeButton("cancel") { dialog, which -> }.show()
             }
-            R.id.buttonStyle4 -> {
+            R.id.buttonDialogActivity -> {
                 startActivity(Intent(this, DialogActivity::class.java))
             }
+            R.id.buttonCustomDialog -> CustomDialog(this).show()
+
         }
     }
 }

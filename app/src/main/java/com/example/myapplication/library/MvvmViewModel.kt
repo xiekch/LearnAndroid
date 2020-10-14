@@ -1,18 +1,23 @@
 package com.example.myapplication.library
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.liveData
 
-class MvvmViewModel : ViewModel() {
-    private lateinit var numberLiveData: MutableLiveData<Int>
+class MvvmViewModel(savedStateHandle: SavedStateHandle) : ViewModel() {
+    private var numberLiveData: MutableLiveData<Int> = MutableLiveData()
+    val userId: LiveData<Int> = liveData {
+        val data = 0//database.loadUser() // loadUser is a suspend function.
+        emit(data)
+    }
+
+    init {
+        numberLiveData.value = 2
+    }
 
     fun getNumber(): LiveData<Int> {
-        if (!::numberLiveData.isInitialized) {
-            numberLiveData = MutableLiveData()
-            numberLiveData.value = 2
-        }
         return numberLiveData
     }
 
