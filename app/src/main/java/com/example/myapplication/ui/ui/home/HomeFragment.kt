@@ -35,8 +35,8 @@ class HomeFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        buttonJumpToGalleryFragment.setOnClickListener {
-            findNavController().navigate(R.id.homeFragmentToGalleryFragment)
-        }
+        buttonJumpToGalleryFragment.setOnClickListener(
+            Navigation.createNavigateOnClickListener(R.id.homeFragmentToGalleryFragment)
+        )
     }
 }
