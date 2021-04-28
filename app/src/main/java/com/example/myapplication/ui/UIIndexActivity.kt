@@ -4,7 +4,6 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.view.GestureDetector
 import android.view.LayoutInflater
 import android.view.MotionEvent
 import android.view.View
@@ -12,23 +11,7 @@ import android.view.View.OnTouchListener
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.myapplication.R
-import kotlinx.android.synthetic.main.activity_layout_index.button1
-import kotlinx.android.synthetic.main.activity_layout_index.button2
-import kotlinx.android.synthetic.main.activity_layout_index.button3
-import kotlinx.android.synthetic.main.activity_layout_index.button4
-import kotlinx.android.synthetic.main.activity_layout_index.button5
-import kotlinx.android.synthetic.main.activity_layout_index.button6
-import kotlinx.android.synthetic.main.activity_layout_index.button8
-import kotlinx.android.synthetic.main.activity_layout_index.button9
-import kotlinx.android.synthetic.main.activity_layout_index.buttonDrawerLayout
-import kotlinx.android.synthetic.main.activity_layout_index.buttonFullScreen
-import kotlinx.android.synthetic.main.activity_layout_index.buttonGestureDetector
-import kotlinx.android.synthetic.main.activity_layout_index.buttonKeyboard
-import kotlinx.android.synthetic.main.activity_layout_index.buttonMyButton
-import kotlinx.android.synthetic.main.activity_layout_index.buttonNavigation
-import kotlinx.android.synthetic.main.activity_layout_index.button_collapsing_toolbar
-import kotlinx.android.synthetic.main.activity_layout_index.button_list_view
-import kotlinx.android.synthetic.main.activity_layout_index.constraintLayout
+import kotlinx.android.synthetic.main.activity_layout_index.*
 
 class UIIndexActivity : AppCompatActivity(), View.OnClickListener, OnTouchListener {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -56,6 +39,7 @@ class UIIndexActivity : AppCompatActivity(), View.OnClickListener, OnTouchListen
         buttonDrawerLayout.setOnClickListener(this)
         buttonGestureDetector.setOnClickListener(this)
         buttonNavigation.setOnClickListener(this)
+        buttonViewPager2.setOnClickListener(this)
     }
 
     override fun onClick(v: View) {
@@ -115,6 +99,7 @@ class UIIndexActivity : AppCompatActivity(), View.OnClickListener, OnTouchListen
             R.id.buttonDrawerLayout -> startActivity(Intent(this, DrawerLayoutActivity::class.java))
             R.id.buttonGestureDetector -> startActivity(Intent(this, GestureActivity::class.java))
             R.id.buttonNavigation -> startActivity(Intent(this, NavigationActivity::class.java))
+            R.id.buttonViewPager2 -> startActivity(Intent(this, ViewPagerActivity::class.java))
         }
     }
 
