@@ -21,7 +21,4 @@ class MyButton @JvmOverloads constructor(
         return false
     }
 
-    override fun performClick(): Boolean {
-        return super.performClick()
-    }
 }

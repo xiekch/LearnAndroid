@@ -3,7 +3,7 @@ package com.example.myapplication.ui
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.myapplication.R
-import com.example.myapplication.recyclerView.LinearLayoutRecyclerViewAdapter
+import com.example.myapplication.ui.recyclerView.LinearLayoutRecyclerViewAdapter
 import kotlinx.android.synthetic.main.activity_collapsing_toolbar.recycler_view
 import kotlinx.android.synthetic.main.activity_collapsing_toolbar.toolbar
 

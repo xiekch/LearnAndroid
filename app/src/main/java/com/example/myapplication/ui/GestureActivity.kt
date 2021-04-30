@@ -15,10 +15,6 @@ class GestureActivity : AppCompatActivity() {
         setContentView(R.layout.activity_gesture)
     }
 
-    override fun onSaveInstanceState(outState: Bundle) {
-        super.onSaveInstanceState(outState)
-    }
-
     companion object {
         const val TAG = "GestureActivity"
     }

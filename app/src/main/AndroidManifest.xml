@@ -17,6 +17,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".etc.EtcIndexActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
             android:name=".ui.ViewPagerActivity"
             android:parentActivityName=".ui.UIIndexActivity" />
         <activity android:name=".ui.NavigationActivity" />
@@ -124,11 +127,11 @@
         </activity-alias>
 
         <activity
-            android:name=".recyclerView.RecyclerIndexActivity"
+            android:name=".ui.recyclerView.RecyclerIndexActivity"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".recyclerView.StaggeredGridRecyclerViewActivity"
-            android:parentActivityName=".recyclerView.RecyclerIndexActivity" />
+            android:name=".ui.recyclerView.StaggeredGridRecyclerViewActivity"
+            android:parentActivityName=".ui.recyclerView.RecyclerIndexActivity" />
         <activity
             android:name=".ui.UIIndexActivity"
             android:parentActivityName=".MainActivity" />
@@ -136,9 +139,9 @@
             android:name=".animation.AnimationActivity"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".recyclerView.LinearLayoutRecyclerViewActivity"
+            android:name=".ui.recyclerView.LinearLayoutRecyclerViewActivity"
             android:label="@string/title_activity_details"
-            android:parentActivityName=".recyclerView.RecyclerIndexActivity"
+            android:parentActivityName=".ui.recyclerView.RecyclerIndexActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

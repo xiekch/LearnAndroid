@@ -1,4 +1,4 @@
-package com.example.myapplication.recyclerView;
+package com.example.myapplication.ui.recyclerView;
 
 import androidx.appcompat.app.AppCompatActivity;
 

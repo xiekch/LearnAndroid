@@ -11,6 +11,7 @@ import android.view.View.OnTouchListener
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.myapplication.R
+import com.example.myapplication.ui.recyclerView.RecyclerIndexActivity
 import kotlinx.android.synthetic.main.activity_layout_index.*
 
 class UIIndexActivity : AppCompatActivity(), View.OnClickListener, OnTouchListener {
@@ -34,6 +35,7 @@ class UIIndexActivity : AppCompatActivity(), View.OnClickListener, OnTouchListen
         button9.setOnClickListener(this)
         button_collapsing_toolbar.setOnClickListener(this)
         button_list_view.setOnClickListener(this)
+        button_recycler_view.setOnClickListener(this)
         buttonKeyboard.setOnClickListener(this)
         buttonFullScreen.setOnClickListener(this)
         buttonDrawerLayout.setOnClickListener(this)
@@ -90,6 +92,12 @@ class UIIndexActivity : AppCompatActivity(), View.OnClickListener, OnTouchListen
                 intent = Intent(this@UIIndexActivity, ListViewActivity::class.java)
                 startActivity(intent)
             }
+            R.id.button_recycler_view -> startActivity(
+                Intent(
+                    this,
+                    RecyclerIndexActivity::class.java
+                )
+            )
             R.id.button_collapsing_toolbar -> {
                 intent = Intent(this@UIIndexActivity, CollapsingToolbarActivity::class.java)
                 startActivity(intent)

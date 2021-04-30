@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.myapplication.R
 
 class FilesActivity : AppCompatActivity(), View.OnClickListener {
-    private val REQUEST_PERMISSION = 1;
+    private val REQUEST_PERMISSION = 1
     private lateinit var buttonRequestPermissions: Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,7 +42,7 @@ class FilesActivity : AppCompatActivity(), View.OnClickListener {
         if (checkPermissionAllGranted(mPermissionsArrays)) {
             Toast.makeText(this, "permissions accepted", Toast.LENGTH_LONG).show()
         } else {
-            requestPermissions(mPermissionsArrays, REQUEST_PERMISSION);
+            requestPermissions(mPermissionsArrays, REQUEST_PERMISSION)
         }
     }
 
