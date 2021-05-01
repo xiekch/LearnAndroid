@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
@@ -19,152 +18,93 @@
             <Button
                 android:id="@+id/button1"
                 style="@style/ConstraintLayoutIndexButton"
-                android:text="@string/sysu_system"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:text="@string/sysu_system" />
 
             <Button
                 android:id="@+id/button2"
                 style="@style/ConstraintLayoutIndexButton"
-                android:text="@string/webview"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/button1" />
+                android:text="@string/webview" />
 
             <Button
                 android:id="@+id/button3"
                 style="@style/ConstraintLayoutIndexButton"
-                android:text="Load HTML"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/button2" />
+                android:text="Load HTML" />
 
             <Button
                 android:id="@+id/button4"
                 style="@style/ConstraintLayoutIndexButton"
-                android:text="Toast"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/button3" />
+                android:text="Toast" />
 
             <Button
                 android:id="@+id/button5"
                 style="@style/ConstraintLayoutIndexButton"
-                android:text="AlertDialog"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/button4" />
+                android:text="AlertDialog" />
 
 
             <Button
                 android:id="@+id/button6"
                 style="@style/ConstraintLayoutIndexButton"
-                android:text="Progress Bar"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/button5" />
-
+                android:text="Progress Bar" />
 
             <com.example.myapplication.ui.MyButton
                 android:id="@+id/buttonMyButton"
                 style="@style/ConstraintLayoutIndexButton"
-                android:text="My Button"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/button6" />
-
+                android:text="My Button" />
 
             <Button
                 android:id="@+id/button8"
                 style="@style/ConstraintLayoutIndexButton"
-                android:text="ActionBar"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/buttonMyButton" />
+                android:text="ActionBar" />
 
             <Button
                 android:id="@+id/button9"
                 style="@style/ConstraintLayoutIndexButton"
-                android:text="ToolBar"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/button8" />
-
+                android:text="ToolBar" />
 
             <Button
                 android:id="@+id/button_list_view"
                 style="@style/ConstraintLayoutIndexButton"
-                android:text="List View"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/button9" />
+                android:text="List View" />
 
             <Button
                 android:id="@+id/button_recycler_view"
                 style="@style/ConstraintLayoutIndexButton"
-                android:text="Recycler View"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/button_list_view" />
-
+                android:text="Recycler View" />
 
             <Button
                 android:id="@+id/button_collapsing_toolbar"
                 style="@style/ConstraintLayoutIndexButton"
-                android:text="Collapsing Toolbar"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/button_list_view" />
+                android:text="Collapsing Toolbar" />
 
             <Button
                 android:id="@+id/buttonKeyboard"
                 style="@style/ConstraintLayoutIndexButton"
-                android:text="Keyboard"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/button_collapsing_toolbar" />
+                android:text="Keyboard" />
 
             <Button
                 android:id="@+id/buttonFullScreen"
                 style="@style/ConstraintLayoutIndexButton"
-                android:text="Full Screen"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/buttonKeyboard" />
+                android:text="Full Screen" />
 
             <Button
                 android:id="@+id/buttonDrawerLayout"
                 style="@style/ConstraintLayoutIndexButton"
-                android:text="Drawer Layout"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/buttonFullScreen" />
+                android:text="Drawer Layout" />
 
             <Button
                 android:id="@+id/buttonGestureDetector"
                 style="@style/ConstraintLayoutIndexButton"
-                android:text="Gesture Detector"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/buttonDrawerLayout" />
+                android:text="Gesture Detector" />
 
             <Button
                 android:id="@+id/buttonNavigation"
                 style="@style/ConstraintLayoutIndexButton"
-                android:text="Navigation"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/buttonGestureDetector" />
-
+                android:text="Navigation" />
 
             <Button
                 android:id="@+id/buttonViewPager2"
                 style="@style/ConstraintLayoutIndexButton"
-                android:text="View Pager 2"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/buttonNavigation" />
+                android:text="View Pager 2" />
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

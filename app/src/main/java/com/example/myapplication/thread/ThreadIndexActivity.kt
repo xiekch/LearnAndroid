@@ -17,7 +17,6 @@ import kotlinx.android.synthetic.main.activity_thread_index.button_post_delayed
 import kotlinx.android.synthetic.main.activity_thread_index.button_send_message
 import kotlinx.android.synthetic.main.activity_thread_index.button_tick
 import kotlinx.android.synthetic.main.activity_thread_index.switch_load_data
-import kotlinx.android.synthetic.main.activity_thread_index.textView_data
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import java.io.IOException
@@ -192,7 +191,7 @@ class ThreadIndexActivity : AppCompatActivity(), View.OnClickListener {
                     sendEmptyMessageDelayed(MSG_TICK, 3000)
                 }
                 MSG_TICK_STOP -> stop = true
-                MSG_DATA -> contextReference.get()?.textView_data?.text = msg.obj.toString()
+                MSG_DATA -> contextReference.get()?.switch_load_data?.text = msg.obj.toString()
             }
             //            Toast.makeText(ThreadIndexActivity.this, "You will not see it", Toast.LENGTH_SHORT).show();
         }

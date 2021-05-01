@@ -1,89 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".thread.ThreadIndexActivity">
 
-    <Button
-        android:id="@+id/button_post_delayed"
-        style="@style/ConstraintLayoutIndexButton"
-        android:text="postDelayed"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
-    <Button
-        android:id="@+id/button_send_message"
-        style="@style/ConstraintLayoutIndexButton"
-        android:text="sendMessage"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/button_post_delayed" />
-
-    <Button
-        android:id="@+id/button_cancel"
-        style="@style/ConstraintLayoutIndexButton"
-        android:text="Cancel"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/button_send_message" />
-
-    <ToggleButton
-        android:id="@+id/button_tick"
-        style="@style/ConstraintLayoutIndexButton"
-        android:checked="false"
-        android:textOff="Tick off"
-        android:textOn="Tick on"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/button_cancel" />
-
-    <Button
-        android:id="@+id/button_clock"
-        style="@style/ConstraintLayoutIndexButton"
-        android:text="@string/clock"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/button_tick" />
-
     <LinearLayout
-        android:id="@+id/linear_layout_data"
-        style="@style/ConstraintLayoutIndexButton"
-        android:background="@color/lightGray"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/button_clock">
-
-        <TextView
-            android:id="@+id/textView_data"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:padding="8dp"
-            android:text="Data"
-            android:textColor="@color/deepBlue"
-            android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <Switch
-            android:id="@+id/switch_load_data"
-            style="@style/ConstraintLayoutIndexButton"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent" />
-    </LinearLayout>
-
-    <Button
-        android:id="@+id/button_download"
-        style="@style/ConstraintLayoutIndexButton"
-        android:text="@string/Download"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/linear_layout_data" />
-
-    <ProgressBar
-        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:visibility="gone"
-        android:id="@+id/progressBar_download"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/button_download" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/button_post_delayed"
+            style="@style/ConstraintLayoutIndexButton"
+            android:text="postDelayed" />
+
+
+        <Button
+            android:id="@+id/button_send_message"
+            style="@style/ConstraintLayoutIndexButton"
+            android:text="sendMessage" />
+
+        <Button
+            android:id="@+id/button_cancel"
+            style="@style/ConstraintLayoutIndexButton"
+            android:text="Cancel" />
+
+        <ToggleButton
+            android:id="@+id/button_tick"
+            style="@style/ConstraintLayoutIndexButton"
+            android:checked="false"
+            android:textOff="Tick off"
+            android:textOn="Tick on" />
+
+        <Button
+            android:id="@+id/button_clock"
+            style="@style/ConstraintLayoutIndexButton"
+            android:text="@string/clock" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switch_load_data"
+            style="@style/ConstraintLayoutIndexButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Data"
+            android:textAlignment="center"
+            android:textSize="22sp" />
+
+        <Button
+            android:id="@+id/button_download"
+            style="@style/ConstraintLayoutIndexButton"
+            android:text="@string/Download" />
+
+        <ProgressBar
+            android:id="@+id/progressBar_download"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:visibility="gone" />
+    </LinearLayout>
+</ScrollView>
