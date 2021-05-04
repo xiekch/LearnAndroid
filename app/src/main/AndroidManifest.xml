@@ -154,10 +154,10 @@
             android:name=".ui.DisplayMessageActivity"
             android:parentActivityName=".MainActivity">
 
-            <!-- The meta-data tag is required if you support API level 15 and lower -->
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+            <intent-filter>
+                <action android:name="com.example.myapplication.display" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".MainActivity"
@@ -166,6 +166,10 @@
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.example.myapplication.main" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
     </application>
