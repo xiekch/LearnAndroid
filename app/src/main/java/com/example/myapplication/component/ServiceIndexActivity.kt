@@ -12,18 +12,12 @@ import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.example.myapplication.R
 
-class ServiceIndexActivity : AppCompatActivity(), View.OnClickListener {
-    private lateinit var mBinder: MyService.MyBinder
+class ServiceIndexActivity : AppCompatActivity(), View.OnClickListener, ServiceConnection {
+    private var mService: MyService? = null
     private var isBound = false
-    private val mConnection = object : ServiceConnection {
-        override fun onServiceDisconnected(name: ComponentName?) {
-        }
 
-        override fun onServiceConnected(name: ComponentName?, service: IBinder?) {
-            mBinder = service as MyService.MyBinder
-            mBinder.startDownload()
-            mBinder.getProgress()
-        }
+    companion object {
+        private const val TAG = "ServiceIndexActivity"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -46,12 +40,16 @@ class ServiceIndexActivity : AppCompatActivity(), View.OnClickListener {
                 stopService(Intent(this, MyService::class.java))
 
             R.id.button_bind_service ->
-                isBound = bindService(Intent(this, MyService::class.java), mConnection, Context.BIND_AUTO_CREATE)
+                bindService(
+                    Intent(this, MyService::class.java),
+                    this,
+                    Context.BIND_AUTO_CREATE
+                )
 
             R.id.button_unbind_service -> {
-                if (isBound)
-                    unbindService(mConnection)
+                unbindService(this)
                 isBound = false
+                mService = null
             }
 
             R.id.button_intent_service -> {
@@ -59,5 +57,19 @@ class ServiceIndexActivity : AppCompatActivity(), View.OnClickListener {
                 startService(Intent(this, MyIntentService::class.java))
             }
         }
+    }
+
+    override fun onServiceConnected(name: ComponentName?, service: IBinder?) {
+        Log.i(TAG, "service connected")
+        isBound = true
+        mService = (service as MyService.MyBinder).getService()
+        mService?.startDownload()
+        mService?.getProgress()
+    }
+
+    override fun onServiceDisconnected(name: ComponentName?) {
+        Log.i(TAG, "service disconnected")
+        isBound = false
+        mService = null
     }
 }
