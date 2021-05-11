@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.myapplication.R;
 
 public class StaggeredGridRecyclerViewAdapter extends RecyclerView.Adapter<StaggeredGridRecyclerViewAdapter.MyViewHolder> {
-    private Context mContext;
+    private final Context mContext;
 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
@@ -39,9 +39,7 @@ public class StaggeredGridRecyclerViewAdapter extends RecyclerView.Adapter<Stagg
         // create a new view
         ImageView v = (ImageView) LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.staggered_item_imageview, parent, false);
-//        ...
-        MyViewHolder vh = new MyViewHolder(v);
-        return vh;
+        return new MyViewHolder(v);
     }
 
     // Replace the contents of a view (invoked by the layout manager)

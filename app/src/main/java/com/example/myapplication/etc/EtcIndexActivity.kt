@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.myapplication.R
+import com.example.myapplication.etc.musicplayer.MusicPlayerActivity
 import kotlinx.android.synthetic.main.activity_etc_index.*
 
 class EtcIndexActivity : AppCompatActivity(), View.OnClickListener {
@@ -16,6 +17,7 @@ class EtcIndexActivity : AppCompatActivity(), View.OnClickListener {
         setContentView(R.layout.activity_etc_index)
 
         buttonOpenCamera.setOnClickListener(this)
+        buttonMusicPlayer.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -26,6 +28,7 @@ class EtcIndexActivity : AppCompatActivity(), View.OnClickListener {
                     CAMERA
                 )
             }
+            R.id.buttonMusicPlayer -> startActivity(Intent(this, MusicPlayerActivity::class.java))
         }
     }
 
