@@ -19,5 +19,15 @@
             android:id="@+id/buttonMusicPlayer"
             style="@style/ConstraintLayoutIndexButton"
             android:text="Music Player" />
+
+        <Button
+            android:id="@+id/buttonRTLLanguage"
+            style="@style/ConstraintLayoutIndexButton"
+            android:text="RTL Language" />
+
+        <Button
+            android:id="@+id/buttonTest"
+            style="@style/ConstraintLayoutIndexButton"
+            android:text="Test" />
     </LinearLayout>
 </ScrollView>

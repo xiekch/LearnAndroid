@@ -29,4 +29,5 @@
     <string name="library">Library</string>
     <string name="clock">clock</string>
     <string name="Download">Download</string>
+    <string name="did_you_mean">你意味着%s？</string>
 </resources>
