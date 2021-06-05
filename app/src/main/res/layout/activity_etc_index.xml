@@ -25,6 +25,15 @@
             style="@style/ConstraintLayoutIndexButton"
             android:text="RTL Language" />
 
+        <TextView
+            android:id="@+id/textMove"
+            style="@style/ConstraintLayoutIndexButton"
+            android:layout_width="100dp"
+            android:height="30dp"
+            android:background="@color/lightGreen"
+            android:translationZ="5dp"
+            android:text="move" />
+
         <Button
             android:id="@+id/buttonTest"
             style="@style/ConstraintLayoutIndexButton"
