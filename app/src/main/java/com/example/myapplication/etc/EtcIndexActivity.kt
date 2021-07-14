@@ -29,6 +29,7 @@ class EtcIndexActivity : AppCompatActivity(), View.OnClickListener, View.OnTouch
         buttonMusicPlayer.setOnClickListener(this)
         buttonRTLLanguage.setOnClickListener(this)
         textMove.setOnTouchListener(this)
+        buttonTest.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -42,6 +43,8 @@ class EtcIndexActivity : AppCompatActivity(), View.OnClickListener, View.OnTouch
             R.id.buttonMusicPlayer -> startActivity(Intent(this, MusicPlayerActivity::class.java))
             R.id.buttonRTLLanguage -> rTLLanguage()
             R.id.buttonTest -> {
+//                textMove.layout(-50, 0, -50 + textMove.width, textMove.height)
+//                textMove.translationX
             }
         }
     }

@@ -42,6 +42,7 @@ class UIIndexActivity : AppCompatActivity(), View.OnClickListener, OnTouchListen
         buttonGestureDetector.setOnClickListener(this)
         buttonNavigation.setOnClickListener(this)
         buttonViewPager2.setOnClickListener(this)
+        buttonRelativeLayout.setOnClickListener(this)
     }
 
     override fun onClick(v: View) {
@@ -108,6 +109,9 @@ class UIIndexActivity : AppCompatActivity(), View.OnClickListener, OnTouchListen
             R.id.buttonGestureDetector -> startActivity(Intent(this, GestureActivity::class.java))
             R.id.buttonNavigation -> startActivity(Intent(this, NavigationActivity::class.java))
             R.id.buttonViewPager2 -> startActivity(Intent(this, ViewPagerActivity::class.java))
+            R.id.buttonRelativeLayout -> startActivity(
+                Intent(this, RelativeLayoutActivity::class.java)
+            )
         }
     }
 

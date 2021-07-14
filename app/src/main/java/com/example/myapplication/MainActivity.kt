@@ -21,6 +21,7 @@ import kotlinx.android.synthetic.main.constraint_layout_nine_squares.*
 class MainActivity : AppCompatActivity(), View.OnClickListener {
     companion object {
         const val EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE"
+        const val TAG = "MainActivity"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,6 +48,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         view3_1.setOnClickListener(this)
         view3_2.setOnClickListener(this)
         view3_3.setOnClickListener(this)
+
+        Log.i(TAG, "intent ${intent?.action} ${intent?.categories}")
     }
 
     /**

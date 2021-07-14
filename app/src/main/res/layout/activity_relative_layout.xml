@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.RelativeLayoutActivity">
+
+    <TextView
+        android:id="@+id/relativeView1"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@color/deepBlue"
+        android:text="AAAAAAAAAAA" />
+
+
+    <TextView
+        android:id="@+id/relativeView2"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_toEndOf="@id/relativeView1"
+        android:background="@color/lightGreen"
+        android:text="BBBBBBBBBBBB" />
+
+
+    <TextView
+        android:id="@+id/relativeView3"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_toEndOf="@id/relativeView2"
+        android:background="@color/orange"
+        android:text="CCCCCCCCCCC" />
+
+    <Button
+        android:id="@+id/buttonMoveLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="move left" />
+
+    <Button
+        android:id="@+id/buttonTranslationX"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/buttonMoveLeft"
+        android:layout_centerHorizontal="true"
+        android:text="TranslationX" />
+
+    <Button
+        android:id="@+id/buttonMarginLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/buttonTranslationX"
+        android:layout_centerHorizontal="true"
+        android:text="Margin left" />
+
+
+    <Button
+        android:id="@+id/buttonAdjust"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/buttonTranslationX"
+        android:layout_centerHorizontal="true"
+        android:text="Adjust" />
+
+    <Button
+        android:id="@+id/buttonAnimation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/buttonTranslationX"
+        android:layout_centerHorizontal="true"
+        android:text="Animation" />
+
+    <LinearLayout
+        android:id="@+id/linearLayoutAdjust"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipChildren="false"
+        android:layout_below="@id/relativeView1"
+        android:layout_toEndOf="@id/relativeView1">
+
+        <TextView
+            android:id="@+id/viewInLinearLayoutAdjust"
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:background="@color/lightGray" />
+    </LinearLayout>
+</RelativeLayout>
