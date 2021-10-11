@@ -35,11 +35,11 @@
                 style="@style/ConstraintLayoutIndexButton"
                 android:text="Toast" />
 
+
             <Button
                 android:id="@+id/button5"
                 style="@style/ConstraintLayoutIndexButton"
                 android:text="AlertDialog" />
-
 
             <Button
                 android:id="@+id/button6"
@@ -110,6 +110,11 @@
                 android:id="@+id/buttonRelativeLayout"
                 style="@style/ConstraintLayoutIndexButton"
                 android:text="Relative Layout" />
+
+            <Button
+                android:id="@+id/buttonInflater"
+                style="@style/ConstraintLayoutIndexButton"
+                android:text="Inflater" />
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

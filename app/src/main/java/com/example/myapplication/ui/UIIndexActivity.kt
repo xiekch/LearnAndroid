@@ -43,6 +43,7 @@ class UIIndexActivity : AppCompatActivity(), View.OnClickListener, OnTouchListen
         buttonNavigation.setOnClickListener(this)
         buttonViewPager2.setOnClickListener(this)
         buttonRelativeLayout.setOnClickListener(this)
+        buttonInflater.setOnClickListener(this)
     }
 
     override fun onClick(v: View) {
@@ -112,6 +113,7 @@ class UIIndexActivity : AppCompatActivity(), View.OnClickListener, OnTouchListen
             R.id.buttonRelativeLayout -> startActivity(
                 Intent(this, RelativeLayoutActivity::class.java)
             )
+            R.id.buttonInflater -> startActivity(Intent(this, InflaterActivity::class.java))
         }
     }
 

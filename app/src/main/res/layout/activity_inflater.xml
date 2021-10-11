@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.InflaterActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/inflaterContainer1"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="30dp"
+        android:background="@drawable/green_stroke"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/inflaterContainer2"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="30dp"
+        android:background="@drawable/green_stroke"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/inflaterContainer1" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/inflaterContainer3"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="30dp"
+        android:background="@drawable/green_stroke"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/inflaterContainer2" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/inflaterContainer4"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="30dp"
+        android:background="@drawable/green_stroke"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/inflaterContainer3" />
+</androidx.constraintlayout.widget.ConstraintLayout>
