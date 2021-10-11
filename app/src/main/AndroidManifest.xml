@@ -18,7 +18,35 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.RelativeLayoutActivity"></activity>
+        <activity
+            android:name=".ui.InflaterActivity"
+            android:exported="true" />
+        <activity
+            android:name=".intent.AcceptShareActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="image/*" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEND_MULTIPLE" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="image/*" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.RelativeLayoutActivity" />
 
         <service
             android:name=".etc.musicplayer.MusicPlayerService"
@@ -52,7 +80,7 @@
         <activity
             android:name=".ui.CollapsingToolbarActivity"
             android:label="CollapsingToolbar"
-            android:theme="@style/CollapsingToolbarActivityTheme" />
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".library.Dagger2Activity" />
         <activity android:name=".library.RxJavaActivity" />
         <activity android:name=".library.OkHttpActivity" />
@@ -141,7 +169,8 @@
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".ui.recyclerView.StaggeredGridRecyclerViewActivity"
-            android:parentActivityName=".ui.recyclerView.RecyclerIndexActivity" />
+            android:parentActivityName=".ui.recyclerView.RecyclerIndexActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ui.UIIndexActivity"
             android:parentActivityName=".MainActivity" />

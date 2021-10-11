@@ -31,8 +31,8 @@
             android:layout_width="100dp"
             android:height="30dp"
             android:background="@color/lightGreen"
-            android:translationZ="5dp"
-            android:text="move" />
+            android:text="move"
+            android:translationZ="5dp" />
 
         <Button
             android:id="@+id/buttonTest"

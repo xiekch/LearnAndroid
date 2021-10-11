@@ -2,6 +2,7 @@ package com.example.myapplication.etc
 
 import android.content.Intent
 import android.os.Bundle
+import android.provider.MediaStore
 import android.provider.MediaStore.ACTION_IMAGE_CAPTURE
 import android.text.BidiFormatter
 import android.util.Log
@@ -12,7 +13,6 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.myapplication.R
 import com.example.myapplication.etc.musicplayer.MusicPlayerActivity
 import kotlinx.android.synthetic.main.activity_etc_index.*
-import kotlinx.android.synthetic.main.activity_thread_index.*
 
 class EtcIndexActivity : AppCompatActivity(), View.OnClickListener, View.OnTouchListener {
     private val CAMERA = 1
@@ -36,8 +36,8 @@ class EtcIndexActivity : AppCompatActivity(), View.OnClickListener, View.OnTouch
         when (v?.id) {
             R.id.buttonOpenCamera -> Intent(ACTION_IMAGE_CAPTURE).apply {
                 startActivityForResult(
-                    this,
-                    CAMERA
+                        this,
+                        CAMERA
                 )
             }
             R.id.buttonMusicPlayer -> startActivity(Intent(this, MusicPlayerActivity::class.java))
@@ -45,6 +45,15 @@ class EtcIndexActivity : AppCompatActivity(), View.OnClickListener, View.OnTouch
             R.id.buttonTest -> {
 //                textMove.layout(-50, 0, -50 + textMove.width, textMove.height)
 //                textMove.translationX
+                Intent(Intent.ACTION_PICK).setDataAndType(
+                        MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
+                        "image/*"
+                ).apply {
+                    startActivityForResult(
+                            this,
+                            CAMERA
+                    )
+                }
             }
         }
     }
@@ -63,17 +72,17 @@ class EtcIndexActivity : AppCompatActivity(), View.OnClickListener, View.OnTouch
         // The "did_you_mean" localized string resource includes
         // a "%s" placeholder for the suggestion.
         Toast.makeText(
-            this,
-            String.format(getString(R.string.did_you_mean), mySuggestion),
-            Toast.LENGTH_SHORT
+                this,
+                String.format(getString(R.string.did_you_mean), mySuggestion),
+                Toast.LENGTH_SHORT
         ).show()
         Toast.makeText(
-            this,
-            String.format(
-                getString(R.string.did_you_mean),
-                myBidiFormatter.unicodeWrap(mySuggestion)
-            ),
-            Toast.LENGTH_SHORT
+                this,
+                String.format(
+                        getString(R.string.did_you_mean),
+                        myBidiFormatter.unicodeWrap(mySuggestion)
+                ),
+                Toast.LENGTH_SHORT
         ).show()
     }
 
