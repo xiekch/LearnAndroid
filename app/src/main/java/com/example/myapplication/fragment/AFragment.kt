@@ -27,7 +27,7 @@ class AFragment : Fragment(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         if (arguments != null) {
-            text = arguments!!.getString(ARG_PARAM1)
+            text = requireArguments().getString(ARG_PARAM1)
         }
         Toast.makeText(context, "AFragment create", Toast.LENGTH_SHORT).show()
     }
@@ -60,7 +60,7 @@ class AFragment : Fragment(), View.OnClickListener {
             } else {
                 throw RuntimeException(
                     context.toString()
-                            + " must implement OnFragmentInteractionListener"
+                        + " must implement OnFragmentInteractionListener"
                 )
             }
         AMessageListener = if (context is OnAMessageListener) {
@@ -68,7 +68,7 @@ class AFragment : Fragment(), View.OnClickListener {
         } else {
             throw RuntimeException(
                 context.toString()
-                        + " must implement OnMessageListener"
+                    + " must implement OnMessageListener"
             )
         }
     }

@@ -18,6 +18,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <!--   华为平行视界适配   -->
+        <meta-data
+            android:name="EasyGoClient"
+            android:value="true" />
+
         <activity
             android:name=".ui.InflaterActivity"
             android:exported="true" />
@@ -200,7 +205,10 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:screenOrientation="portrait">
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode|screenLayout|smallestScreenSize"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
