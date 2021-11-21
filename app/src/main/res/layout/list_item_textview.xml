@@ -8,5 +8,4 @@
     android:ellipsize="end"
     android:gravity="center"
     android:maxLines="1"
-    android:text="TextView"
     android:textSize="22sp" />

@@ -14,6 +14,6 @@ class CollapsingToolbarActivity : AppCompatActivity() {
         repeat(5) {
             data.add("hello")
         }
-        recycler_view.adapter = LinearLayoutRecyclerViewAdapter(this, data.toTypedArray())
+        recycler_view.adapter = LinearLayoutRecyclerViewAdapter(this, data)
     }
 }

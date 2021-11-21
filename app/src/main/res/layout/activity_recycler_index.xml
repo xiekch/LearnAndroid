@@ -19,16 +19,23 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <Button android:id="@+id/button1"
+            <Button
+                android:id="@+id/button1"
                 style="@style/LinearLayoutIndexButton"
-                android:text="@string/ListLayout"></Button>
+                android:text="@string/ListLayout" />
 
 
             <Button
                 android:id="@+id/button2"
                 style="@style/LinearLayoutIndexButton"
                 android:layout_height="wrap_content"
-                android:text="@string/StaggeredGrid"></Button>
+                android:text="@string/StaggeredGrid" />
+
+            <Button
+                android:id="@+id/button_recycler_view"
+                style="@style/LinearLayoutIndexButton"
+                android:layout_height="match_parent"
+                android:text="@string/Recyclerview" />
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

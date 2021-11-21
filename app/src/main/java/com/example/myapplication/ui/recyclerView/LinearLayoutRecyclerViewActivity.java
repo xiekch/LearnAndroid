@@ -1,17 +1,16 @@
 package com.example.myapplication.ui.recyclerView;
 
 import android.os.Bundle;
-
-import com.example.myapplication.R;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-
+import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.view.View;
+import com.example.myapplication.R;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class LinearLayoutRecyclerViewActivity extends AppCompatActivity {
 
@@ -43,7 +42,7 @@ public class LinearLayoutRecyclerViewActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
 
         // specify an adapter (see also next example)
-        String[] myDataset = new String[]{"南校区", "东校区", "北校区"};
+        ArrayList<String> myDataset = new ArrayList<String>(Arrays.asList("南校区", "东校区", "北校区"));
         RecyclerView.Adapter mAdapter = new LinearLayoutRecyclerViewAdapter(LinearLayoutRecyclerViewActivity.this, myDataset);
         recyclerView.setAdapter(mAdapter);
 

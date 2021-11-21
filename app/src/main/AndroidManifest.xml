@@ -18,7 +18,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <!--   华为平行视界适配   -->
+        <activity
+            android:name=".ui.recyclerView.RecyclerViewActivity"
+            android:exported="false" />
+        <!-- 华为平行视界适配 -->
         <meta-data
             android:name="EasyGoClient"
             android:value="true" />
