@@ -63,6 +63,8 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-viewmodel-savedstate:2.2.0'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.0-beta01'
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.0-beta01'
+    // LeakCanary
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.7'
 }
 
 //阿里云的国内镜像仓库地址
