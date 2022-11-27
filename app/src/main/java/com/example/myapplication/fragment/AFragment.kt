@@ -73,11 +73,6 @@ class AFragment : Fragment(), View.OnClickListener {
         }
     }
 
-    override fun onPause() {
-        super.onPause()
-        Toast.makeText(activity, "onPause", Toast.LENGTH_SHORT).show()
-    }
-
     override fun onDetach() {
         super.onDetach()
         mListener = null

@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="#0f0F0F0F"
     tools:context=".etc.EtcIndexActivity">
 
     <LinearLayout
@@ -38,5 +40,41 @@
             android:id="@+id/buttonTest"
             style="@style/ConstraintLayoutIndexButton"
             android:text="Test" />
+
+        <Button
+            android:id="@+id/anrButton"
+            style="@style/ConstraintLayoutIndexButton"
+            android:text="ANR" />
+
+
+        <Button
+            android:id="@+id/oomButton"
+            style="@style/ConstraintLayoutIndexButton"
+            android:text="OOM" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            app:cardCornerRadius="4dp">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@drawable/bg_corner_radius_4"
+                android:src="@mipmap/flower" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sysu_student_id_input" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="600dp"
+            android:background="#00F00000" />
+
     </LinearLayout>
 </ScrollView>

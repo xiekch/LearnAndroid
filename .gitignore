@@ -15,6 +15,7 @@
 Solution.kt
 test/
 *.classpath
+.classpath
 .project
 .idea
 .settings

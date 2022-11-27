@@ -1,5 +1,6 @@
 package com.example.myapplication.thread
 
+import android.app.Activity
 import android.os.AsyncTask
 import android.os.Bundle
 import android.os.Handler
@@ -11,19 +12,34 @@ import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.myapplication.R
+import java.io.IOException
+import java.lang.ref.WeakReference
+import java.util.Objects
+import kotlin.coroutines.EmptyCoroutineContext
+import kotlinx.android.synthetic.main.activity_thread_index.buttonCoroutine
 import kotlinx.android.synthetic.main.activity_thread_index.button_cancel
 import kotlinx.android.synthetic.main.activity_thread_index.button_download
 import kotlinx.android.synthetic.main.activity_thread_index.button_post_delayed
 import kotlinx.android.synthetic.main.activity_thread_index.button_send_message
 import kotlinx.android.synthetic.main.activity_thread_index.button_tick
 import kotlinx.android.synthetic.main.activity_thread_index.switch_load_data
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 import okhttp3.OkHttpClient
 import okhttp3.Request
-import java.io.IOException
-import java.lang.ref.WeakReference
-import java.util.Objects
 
 class ThreadIndexActivity : AppCompatActivity(), View.OnClickListener {
+    companion object {
+        const val TAG = "ThreadIndexActivity"
+        const val MSG_SEND = 1
+        const val MSG_TICK = 11
+        const val MSG_TICK_STOP = 12
+        const val MSG_DATA = 13
+        const val MSG_DATA_STOP = 14
+    }
+
     private val mainHandler: Handler = MainHandler(this)
     private val dataHandlerThread = HandlerThread("handler thread")
     private var checkDataHandler: Handler? = null
@@ -73,6 +89,11 @@ class ThreadIndexActivity : AppCompatActivity(), View.OnClickListener {
                 checkDataHandler?.sendEmptyMessage(MSG_DATA_STOP)
             }
         }
+        buttonCoroutine.setOnClickListener(this)
+    }
+
+    private fun printThread(id: Int) {
+        Log.i(TAG, "$id: ${Thread.currentThread().name} ${Thread.currentThread().id}")
     }
 
     override fun onClick(v: View) {
@@ -91,8 +112,36 @@ class ThreadIndexActivity : AppCompatActivity(), View.OnClickListener {
             }.start()
             R.id.button_cancel -> mainHandler.removeCallbacksAndMessages(null)
             R.id.button_download -> if (downloadTask == null) {
-                downloadTask = DownloadTask()
+                downloadTask = DownloadTask(this)
                 downloadTask?.execute()
+            }
+            R.id.buttonCoroutine -> {
+                val ioScope = CoroutineScope(Dispatchers.IO)
+                ioScope.launch {
+                    printThread(1)
+                }
+                GlobalScope.launch {
+                    printThread(2)
+                    launch {
+                        printThread(3)
+                    }
+                }
+                GlobalScope.launch(Dispatchers.IO) {
+                    printThread(4)
+                }
+                GlobalScope.launch(Dispatchers.Main) {
+                    printThread(6)
+                }
+                val emptyScope = CoroutineScope(EmptyCoroutineContext)
+                emptyScope.launch {
+                    printThread(5)
+                }
+                runOnUiThread {
+                    printThread(7)
+                    emptyScope.launch {
+                        printThread(9)
+                    }
+                }
             }
         }
     }
@@ -109,19 +158,12 @@ class ThreadIndexActivity : AppCompatActivity(), View.OnClickListener {
         if (dataHandlerThread.isAlive) dataHandlerThread.quit()
     }
 
-    companion object {
-        const val MSG_SEND = 1
-        const val MSG_TICK = 11
-        const val MSG_TICK_STOP = 12
-        const val MSG_DATA = 13
-        const val MSG_DATA_STOP = 14
-    }
-
-    internal inner class DownloadTask : AsyncTask<String?, Int?, String>() {
-        var pb = findViewById<ProgressBar>(R.id.progressBar_download)
+    class DownloadTask(activity: Activity) : AsyncTask<String?, Int?, String>() {
+        val activity = WeakReference<Activity>(activity)
         override fun onPreExecute() {
             super.onPreExecute()
-            pb.visibility = View.VISIBLE
+            val pb = activity.get()?.findViewById<ProgressBar>(R.id.progressBar_download)
+            pb?.visibility = View.VISIBLE
         }
 
         override fun doInBackground(vararg strings: String?): String {
@@ -143,15 +185,18 @@ class ThreadIndexActivity : AppCompatActivity(), View.OnClickListener {
         }
 
         override fun onProgressUpdate(vararg values: Int?) {
-            pb.progress = values[0]!!
+            val pb = activity.get()?.findViewById<ProgressBar>(R.id.progressBar_download)
+            pb?.progress = values[0]!!
         }
 
         override fun onPostExecute(s: String) {
-            Toast.makeText(this@ThreadIndexActivity, s, Toast.LENGTH_SHORT).show()
+            val context = activity.get() ?: return
+            Toast.makeText(context, s, Toast.LENGTH_SHORT).show()
         }
 
         override fun onCancelled(s: String) {
-            Toast.makeText(this@ThreadIndexActivity, "Download Failed", Toast.LENGTH_LONG).show()
+            val context = activity.get() ?: return
+            Toast.makeText(context, "Download Failed", Toast.LENGTH_LONG).show()
         }
 
         private fun getContentLength(downloadUrl: String): Long {

@@ -59,5 +59,10 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:visibility="gone" />
+
+        <Button
+            android:id="@+id/buttonCoroutine"
+            style="@style/ConstraintLayoutIndexButton"
+            android:text="Coroutine" />
     </LinearLayout>
 </ScrollView>

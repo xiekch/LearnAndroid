@@ -19,8 +19,18 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".ui.recyclerView.RecyclerViewActivity"
+            android:name=".ui.CanvasActivity"
             android:exported="false" />
+        <activity
+            android:name=".ui.ChangeTranslationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.ui.WhiteThemeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.BlackThemeActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" /> <!-- 华为平行视界适配 -->
         <!-- 华为平行视界适配 -->
         <meta-data
             android:name="EasyGoClient"
@@ -133,6 +143,7 @@
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".intent.NextActivity"
+            android:exported="false"
             android:label="next">
             <intent-filter>
                 <action android:name="android.intent.action.Jump" />
@@ -181,7 +192,8 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ui.UIIndexActivity"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".animation.AnimationActivity"
             android:parentActivityName=".MainActivity" />
@@ -209,18 +221,13 @@
         <activity
             android:name=".MainActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode|screenLayout|smallestScreenSize"
-            android:launchMode="singleTask"
+            android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateAlwaysHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-            <intent-filter>
-                <action android:name="com.example.myapplication.main" />
-
-                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
     </application>

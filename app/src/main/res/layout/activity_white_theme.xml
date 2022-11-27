@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/deepGray"
+    tools:context=".ui.ui.WhiteThemeActivity">
+
+    <TextView
+        android:id="@+id/invalidateButton"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_margin="30dp"
+        android:gravity="center"
+        android:text="invalidate"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.example.myapplication.ui.ui.TestLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:background="@color/lightGreen"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/invalidateButton">
+
+        <com.example.myapplication.ui.ui.TestView
+            android:id="@+id/textUnderCircle"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@color/lightGray"
+            android:text="longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong" />
+
+    </com.example.myapplication.ui.ui.TestLinearLayout>
+
+    <TextView
+        android:id="@+id/colorTextView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="@string/app_name"
+        android:textSize="30sp" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/mMagnifierCard"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:layout_margin="20dp"
+        app:cardBackgroundColor="@color/transparent"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="0dp"
+        app:cardPreventCornerOverlap="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <SurfaceView
+            android:id="@+id/mMagnifierPreview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_corner_radius_8"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

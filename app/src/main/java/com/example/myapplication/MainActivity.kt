@@ -1,5 +1,7 @@
 package com.example.myapplication
 
+import android.app.ActivityManager
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -16,7 +18,19 @@ import com.example.myapplication.storage.StorageIndexActivity
 import com.example.myapplication.thread.ThreadIndexActivity
 import com.example.myapplication.ui.DisplayMessageActivity
 import com.example.myapplication.ui.UIIndexActivity
-import kotlinx.android.synthetic.main.constraint_layout_nine_squares.*
+import kotlinx.android.synthetic.main.constraint_layout_nine_squares.view1_1
+import kotlinx.android.synthetic.main.constraint_layout_nine_squares.view1_2
+import kotlinx.android.synthetic.main.constraint_layout_nine_squares.view1_3
+import kotlinx.android.synthetic.main.constraint_layout_nine_squares.view2_1
+import kotlinx.android.synthetic.main.constraint_layout_nine_squares.view2_2
+import kotlinx.android.synthetic.main.constraint_layout_nine_squares.view2_3
+import kotlinx.android.synthetic.main.constraint_layout_nine_squares.view3_1
+import kotlinx.android.synthetic.main.constraint_layout_nine_squares.view3_2
+import kotlinx.android.synthetic.main.constraint_layout_nine_squares.view3_3
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
     companion object {
@@ -49,7 +63,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         view3_2.setOnClickListener(this)
         view3_3.setOnClickListener(this)
 
-        Log.i(TAG, "intent ${intent?.action} ${intent?.categories}")
+        val am = getSystemService(Context.ACTIVITY_SERVICE) as? ActivityManager
+        Log.i(TAG, "intent ${intent?.action} ${intent?.categories} ${am}")
     }
 
     /**

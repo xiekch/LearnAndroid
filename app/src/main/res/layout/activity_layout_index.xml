@@ -4,6 +4,7 @@
     android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     tools:context=".ui.UIIndexActivity">
 
     <ScrollView
@@ -115,6 +116,51 @@
                 android:id="@+id/buttonInflater"
                 style="@style/ConstraintLayoutIndexButton"
                 android:text="Inflater" />
+
+            <Button
+                android:id="@+id/buttonEnterFullScreen"
+                style="@style/ConstraintLayoutIndexButton"
+                android:text="Enter Full Screen" />
+
+            <Button
+                android:id="@+id/buttonExitFullScreen"
+                style="@style/ConstraintLayoutIndexButton"
+                android:text="Exit Full Screen" />
+
+            <Button
+                android:id="@+id/buttonBlackTheme"
+                style="@style/ConstraintLayoutIndexButton"
+                android:text="Black Theme" />
+
+            <Button
+                android:id="@+id/buttonWhiteTheme"
+                style="@style/ConstraintLayoutIndexButton"
+                android:text="White Theme" />
+
+            <Button
+                android:id="@+id/buttonChangeTranslation"
+                style="@style/ConstraintLayoutIndexButton"
+                android:text="Translation" />
+
+            <Button
+                android:id="@+id/buttonCanvas"
+                style="@style/ConstraintLayoutIndexButton"
+                android:text="Canvas" />
+
+            <Button
+                android:id="@+id/buttonPopupWindow"
+                style="@style/ConstraintLayoutIndexButton"
+                android:text="Popup window" />
+
+            <Button
+                android:id="@+id/buttonGoBackHome"
+                style="@style/ConstraintLayoutIndexButton"
+                android:text="Go back Home" />
+
+            <Button
+                android:id="@+id/buttonAddView"
+                style="@style/ConstraintLayoutIndexButton"
+                android:text="Add View" />
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

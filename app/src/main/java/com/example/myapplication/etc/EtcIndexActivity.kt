@@ -1,6 +1,7 @@
 package com.example.myapplication.etc
 
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.provider.MediaStore
 import android.provider.MediaStore.ACTION_IMAGE_CAPTURE
@@ -8,11 +9,21 @@ import android.text.BidiFormatter
 import android.util.Log
 import android.view.MotionEvent
 import android.view.View
+import android.view.WindowManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
 import com.example.myapplication.R
 import com.example.myapplication.etc.musicplayer.MusicPlayerActivity
-import kotlinx.android.synthetic.main.activity_etc_index.*
+import kotlinx.android.synthetic.main.activity_etc_index.anrButton
+import kotlinx.android.synthetic.main.activity_etc_index.buttonMusicPlayer
+import kotlinx.android.synthetic.main.activity_etc_index.buttonOpenCamera
+import kotlinx.android.synthetic.main.activity_etc_index.buttonRTLLanguage
+import kotlinx.android.synthetic.main.activity_etc_index.buttonTest
+import kotlinx.android.synthetic.main.activity_etc_index.oomButton
+import kotlinx.android.synthetic.main.activity_etc_index.textMove
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 class EtcIndexActivity : AppCompatActivity(), View.OnClickListener, View.OnTouchListener {
     private val CAMERA = 1
@@ -23,38 +34,70 @@ class EtcIndexActivity : AppCompatActivity(), View.OnClickListener, View.OnTouch
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+//        getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
+//        window.decorView.systemUiVisibility = (View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+//            or View.SYSTEM_UI_FLAG_LAYOUT_STABLE)
+
+        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION)
+        window.decorView.systemUiVisibility = (View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+            or View.SYSTEM_UI_FLAG_LAYOUT_STABLE or View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION)
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+        window.statusBarColor = Color.TRANSPARENT
+
         setContentView(R.layout.activity_etc_index)
+        supportActionBar?.hide()
 
         buttonOpenCamera.setOnClickListener(this)
         buttonMusicPlayer.setOnClickListener(this)
         buttonRTLLanguage.setOnClickListener(this)
         textMove.setOnTouchListener(this)
         buttonTest.setOnClickListener(this)
+        anrButton.setOnClickListener(this)
+        oomButton.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
         when (v?.id) {
             R.id.buttonOpenCamera -> Intent(ACTION_IMAGE_CAPTURE).apply {
                 startActivityForResult(
-                        this,
-                        CAMERA
+                    this,
+                    CAMERA
                 )
             }
             R.id.buttonMusicPlayer -> startActivity(Intent(this, MusicPlayerActivity::class.java))
             R.id.buttonRTLLanguage -> rTLLanguage()
             R.id.buttonTest -> {
-//                textMove.layout(-50, 0, -50 + textMove.width, textMove.height)
-//                textMove.translationX
                 Intent(Intent.ACTION_PICK).setDataAndType(
-                        MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
-                        "image/*"
+                    MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
+                    "image/*"
                 ).apply {
                     startActivityForResult(
-                            this,
-                            CAMERA
+                        this,
+                        CAMERA
                     )
                 }
             }
+            R.id.anrButton -> {
+                try {
+                    Thread.sleep(60 * 1000)
+                } catch (e: Exception) {
+                    Log.e(TAG, e.toString())
+                    Toast.makeText(this, "end", Toast.LENGTH_SHORT).show()
+                }
+            }
+            R.id.oomButton -> {
+                lifecycleScope.launch { testMemeory() }
+            }
+        }
+    }
+
+    private suspend fun testMemeory() {
+        val cache = mutableListOf<IntArray>()
+        for (i in 0..100) {
+            Log.i(TAG, "$i size: ${i * 10}MB")
+            delay(100)
+            cache.add(IntArray((2.5 * 1024 * 1024).toInt()))
         }
     }
 
@@ -72,17 +115,17 @@ class EtcIndexActivity : AppCompatActivity(), View.OnClickListener, View.OnTouch
         // The "did_you_mean" localized string resource includes
         // a "%s" placeholder for the suggestion.
         Toast.makeText(
-                this,
-                String.format(getString(R.string.did_you_mean), mySuggestion),
-                Toast.LENGTH_SHORT
+            this,
+            String.format(getString(R.string.did_you_mean), mySuggestion),
+            Toast.LENGTH_SHORT
         ).show()
         Toast.makeText(
-                this,
-                String.format(
-                        getString(R.string.did_you_mean),
-                        myBidiFormatter.unicodeWrap(mySuggestion)
-                ),
-                Toast.LENGTH_SHORT
+            this,
+            String.format(
+                getString(R.string.did_you_mean),
+                myBidiFormatter.unicodeWrap(mySuggestion)
+            ),
+            Toast.LENGTH_SHORT
         ).show()
     }
 
